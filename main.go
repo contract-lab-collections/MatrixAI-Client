@@ -1,9 +1,12 @@
 package main
 
 import (
-	"MatrixAI-Client/hardwareinfo"
+	"MatrixAI-Client/chain"
+	"MatrixAI-Client/chain/pallets"
+	"MatrixAI-Client/config"
+	"MatrixAI-Client/utils"
 	"fmt"
-	"log"
+
 	"os"
 	"runtime"
 
@@ -14,14 +17,13 @@ var Version = "v0.0.1"
 
 func setupApp() *cli.App {
 	app := cli.NewApp()
-	app.Usage = "MatrixAI-Client"
+	app.Name = "MatrixAI-Client"
+	app.Usage = "Share your unused computing capacity to provide support for more AI creators in need and earn profits at the same time."
 	app.Action = startService
 	app.Version = Version
 	app.Flags = []cli.Flag{}
 	app.Commands = []cli.Command{}
 	app.Before = func(context *cli.Context) error {
-		fmt.Println("NumCPU:", runtime.NumCPU())
-
 		runtime.GOMAXPROCS(runtime.NumCPU())
 		return nil
 	}
@@ -30,20 +32,50 @@ func setupApp() *cli.App {
 
 func main() {
 	if err := setupApp().Run(os.Args); err != nil {
-		fmt.Fprintln(os.Stderr, err)
+		_, _ = fmt.Fprintln(os.Stderr, err)
 		os.Exit(1)
 	}
 }
 
 func startService(context *cli.Context) error {
 
-	hwInfo, err := hardwareinfo.GetHardwareInfo()
+	// ------------------------------------------------------------------------//
+	// 调用hardwareinfo内的GetHardwareInfo方法获取硬件信息
+	// hwInfo, err := hardwareinfo.GetHardwareInfo()
+	// if err != nil {
+	// 	log.Fatalf("Error getting hardware info: %v", err)
+	// }
+
+	// fmt.Printf("Hardware Info:\n%+v\n", hwInfo)
+	// ------------------------------------------------------------------------//
+
+	// ------------------------------------------------------------------------//
+	// 声明一个config结构体变量
+	newConfig := config.NewConfig(
+		"denial empower wear venue distance leopard lamp source off other twelve permit",
+		"wss://testnet-rpc0.cess.cloud/ws/",
+		1)
+
+	// 使用GetChainInfo获取chainInfo，并输出日志
+	chainInfo, err := chain.GetChainInfo(newConfig)
 	if err != nil {
-		log.Fatalf("Error getting hardware info: %v", err)
+		fmt.Printf("Error: %v\n", err)
+		return err
 	}
 
-	fmt.Printf("Hardware Info:\n%+v\n", hwInfo)
+	puk, err := utils.ParsingPublickey("cXkDuF55rcvaAC2aLwrccHACo5z9xLc3hA4udAQp84K2WNcxc")
+	if err != nil {
+		fmt.Printf("Error: %v\n\n", err)
+	}
+	ossWrapper := pallets.NewOssWrapper(chainInfo)
+	hash, err := ossWrapper.Authorize(puk)
+	if err != nil {
+		return err
+	}
+	fmt.Printf("authorize :\n%+v\n", hash)
+	// ------------------------------------------------------------------------//
 
+	// ------------------------------------------------------------------------//
 	// //调用cpu内的GetCPUInfo方法获取CPU信息
 	// cpuInfos, err := cpu.GetCPUInfo()
 	// if err != nil {
@@ -93,6 +125,7 @@ func startService(context *cli.Context) error {
 	// 	fmt.Printf("------ gpu #%d ------\n", idx+1)
 	// 	fmt.Printf("gpu Model Name: %s\n", gpuInfo.Model)
 	// }
+	// ------------------------------------------------------------------------//
 
 	return nil
 }
