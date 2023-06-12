@@ -2,11 +2,17 @@ module MatrixAI-Client
 
 go 1.20
 
-require github.com/urfave/cli v1.22.13
+require (
+	github.com/centrifuge/go-substrate-rpc-client/v4 v4.0.13
+	github.com/natefinch/lumberjack v2.0.0+incompatible
+	github.com/pkg/errors v0.9.1
+	github.com/urfave/cli v1.22.13
+	go.uber.org/zap v1.24.0
+	golang.org/x/crypto v0.9.0
+)
 
 require (
 	github.com/ChainSafe/go-schnorrkel v1.0.0 // indirect
-	github.com/centrifuge/go-substrate-rpc-client/v4 v4.0.12 // indirect
 	github.com/cosmos/go-bip39 v1.0.0 // indirect
 	github.com/deckarep/golang-set v1.8.0 // indirect
 	github.com/decred/base58 v1.0.5 // indirect
@@ -26,9 +32,10 @@ require (
 	github.com/shoenig/go-m1cpu v0.1.6 // indirect
 	github.com/tklauser/go-sysconf v0.3.11 // indirect
 	github.com/tklauser/numcpus v0.6.0 // indirect
-	github.com/vedhavyas/go-subkey v1.0.3 // indirect
+	github.com/vedhavyas/go-subkey v1.0.4 // indirect
 	github.com/yusufpapurcu/wmi v1.2.3 // indirect
-	golang.org/x/crypto v0.9.0 // indirect
+	go.uber.org/atomic v1.11.0 // indirect
+	go.uber.org/multierr v1.11.0 // indirect
 	golang.org/x/sys v0.8.0 // indirect
 	gopkg.in/natefinch/npipe.v2 v2.0.0-20160621034901-c1b8fa8bdcce // indirect
 )

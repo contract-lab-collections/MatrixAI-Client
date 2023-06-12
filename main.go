@@ -4,16 +4,17 @@ import (
 	"MatrixAI-Client/chain"
 	"MatrixAI-Client/chain/pallets"
 	"MatrixAI-Client/config"
-	"MatrixAI-Client/utils"
+	"MatrixAI-Client/hardwareinfo"
+	"MatrixAI-Client/logs"
 	"fmt"
-
+	"go.uber.org/zap"
 	"os"
 	"runtime"
 
 	"github.com/urfave/cli"
 )
 
-var Version = "v0.0.1"
+var Version = "v0.1.2"
 
 func setupApp() *cli.App {
 	app := cli.NewApp()
@@ -39,21 +40,26 @@ func main() {
 
 func startService(context *cli.Context) error {
 
+	initLog()
+
 	// ------------------------------------------------------------------------//
 	// 调用hardwareinfo内的GetHardwareInfo方法获取硬件信息
-	// hwInfo, err := hardwareinfo.GetHardwareInfo()
-	// if err != nil {
-	// 	log.Fatalf("Error getting hardware info: %v", err)
-	// }
+	hwInfo, err := hardwareinfo.GetHardwareInfo()
+	if err != nil {
+		logs.Error(fmt.Sprintf("Error getting hardware info: %v", err))
+		os.Exit(1)
+	}
 
-	// fmt.Printf("Hardware Info:\n%+v\n", hwInfo)
+	logs.Normal(fmt.Sprintf("Hardware Info:\n%+v\n", hwInfo))
+
 	// ------------------------------------------------------------------------//
 
 	// ------------------------------------------------------------------------//
 	// 声明一个config结构体变量
 	newConfig := config.NewConfig(
 		"denial empower wear venue distance leopard lamp source off other twelve permit",
-		"wss://testnet-rpc0.cess.cloud/ws/",
+		"ws://172.16.2.168:9944",
+		//"wss://testnet-rpc0.cess.cloud/ws/",
 		1)
 
 	// 使用GetChainInfo获取chainInfo，并输出日志
@@ -63,16 +69,33 @@ func startService(context *cli.Context) error {
 		return err
 	}
 
-	puk, err := utils.ParsingPublickey("cXkDuF55rcvaAC2aLwrccHACo5z9xLc3hA4udAQp84K2WNcxc")
+	matrixWrapper := pallets.NewMatrixWrapper(chainInfo)
+	hash, err := matrixWrapper.AddMachine(hwInfo)
 	if err != nil {
-		fmt.Printf("Error: %v\n\n", err)
-	}
-	ossWrapper := pallets.NewOssWrapper(chainInfo)
-	hash, err := ossWrapper.Authorize(puk)
-	if err != nil {
+		logs.Error(fmt.Sprintf("Error block : %v, msg : %v\n", hash, err))
 		return err
 	}
-	fmt.Printf("authorize :\n%+v\n", hash)
+	logs.Normal(fmt.Sprintf("add Machine hash :\n%+v\n", hash))
+
+	//puk, err := utils.ParsingPublickey("cXkDuF55rcvaAC2aLwrccHACo5z9xLc3hA4udAQp84K2WNcxc")
+	//if err != nil {
+	//	fmt.Printf("Error: %v\n\n", err)
+	//}
+	//ossWrapper := pallets.NewOssWrapper(chainInfo)
+	//hash, err := ossWrapper.Authorize(puk)
+	//if err != nil {
+	//	return err
+	//}
+	//fmt.Printf("authorize :\n%+v\n", hash)
+	// ------------------------------------------------------------------------//
+
+	// ------------------------------------------------------------------------//
+
+	//subscribeBlocks := subscribe.NewSubscribeWrapper(chainInfo)
+	//subscribeBlocks.SubscribeEvents()
+	//
+	//logs.Normal("subscribe done")
+
 	// ------------------------------------------------------------------------//
 
 	// ------------------------------------------------------------------------//
@@ -128,4 +151,15 @@ func startService(context *cli.Context) error {
 	// ------------------------------------------------------------------------//
 
 	return nil
+}
+
+func initLog() {
+	defer func(Logger *zap.Logger) {
+		err := Logger.Sync()
+		if err != nil {
+			fmt.Printf("Error: %v\n", err)
+		}
+	}(logs.Logger)
+
+	logs.Result("-------------------- start --------------------")
 }

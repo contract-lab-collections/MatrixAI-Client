@@ -1,6 +1,7 @@
 package conn
 
 import (
+	"MatrixAI-Client/chain/pattern"
 	gsrpc "github.com/centrifuge/go-substrate-rpc-client/v4"
 	"github.com/centrifuge/go-substrate-rpc-client/v4/types"
 )
@@ -11,6 +12,7 @@ type Conn struct {
 	Metadata       *types.Metadata
 	GenesisHash    types.Hash
 	RuntimeVersion *types.RuntimeVersion
+	KeyEvents      types.StorageKey
 }
 
 func NewConn(url string) (*Conn, error) {
@@ -34,12 +36,19 @@ func NewConn(url string) (*Conn, error) {
 		return nil, err
 	}
 
+	//keyEvents, err := types.CreateStorageKey(metadata, pattern.SYSTEM, pattern.EVENTS, nil)
+	keyEvents, err := types.CreateStorageKey(metadata, pattern.SYSTEM, pattern.EVENTS, nil)
+	if err != nil {
+		return nil, err
+	}
+
 	conn := &Conn{
 		Rpc:            url,
 		Api:            api,
 		Metadata:       metadata,
 		GenesisHash:    genesisHash,
 		RuntimeVersion: runtimeVersion,
+		KeyEvents:      keyEvents,
 	}
 
 	return conn, nil

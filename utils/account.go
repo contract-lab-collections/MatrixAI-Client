@@ -8,8 +8,10 @@
 package utils
 
 import (
+	"bytes"
 	"errors"
 	"fmt"
+	"github.com/centrifuge/go-substrate-rpc-client/v4/types"
 
 	"github.com/btcsuite/btcutil/base58"
 	"golang.org/x/crypto/blake2b"
@@ -123,4 +125,8 @@ func VerityAddress(address string, prefix []byte) error {
 		return errors.New("Invalid account public key")
 	}
 	return nil
+}
+
+func AreStorageKeysEqual(a, b types.StorageKey) bool {
+	return bytes.Equal([]byte(a), []byte(b))
 }

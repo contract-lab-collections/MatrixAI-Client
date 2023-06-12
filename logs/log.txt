@@ -1,0 +1,128 @@
+{"level":"info","ts":1686367368.9536352,"msg":"11111111111"}
+{"level":"info","ts":1686367374.5657253,"msg":"11111111111"}
+{"level":"info","ts":1686367374.7724683,"msg":"11111111111"}
+{"level":"info","ts":1686367389.7601476,"msg":"11111111111"}
+{"level":"info","ts":1686367392.4224577,"msg":"11111111111"}
+{"level":"info","ts":1686367398.4983091,"msg":"11111111111"}
+{"level":"info","ts":1686367404.6172445,"msg":"11111111111"}
+{"level":"info","ts":1686368083.0675642,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686368087.9562256,"msg":"---------- block hash ----------\n0x917f2647c51f4dfac26703109d71899781928d6f837a37dcd0b5a560231ac7be"}
+{"level":"info","ts":1686368088.5217898,"msg":"---------- block hash ----------\n0x16b07fa1153bbe14d35bb6df6b96cdde6a01cfec3c0a419814ce0aba9c5fbe97"}
+{"level":"info","ts":1686368094.333617,"msg":"---------- block hash ----------\n0xb76e75da885010c88d337f9ebf64c841aa70741471948def4b63ca5241d870af"}
+{"level":"info","ts":1686368100.4139073,"msg":"---------- block hash ----------\n0x6f274855d944e1a8634cf3c8110a62870baf337de195037cc8f7aaede6333a69"}
+{"level":"info","ts":1686368100.5396633,"msg":"---------- block hash ----------\n0x91199b2ba308fda8df72ac94bc683be086fc60906191590b5362d52653d41d5d"}
+{"level":"info","ts":1686368100.5559666,"msg":"---------- block hash ----------\n0xf439d30a5094c2b2240133d63a15498a28722956c75eb40edbdafcd7016e103a"}
+{"level":"info","ts":1686368106.5939405,"msg":"---------- block hash ----------\n0x4a517aba5bb2129b76eb2ed5071295d22b4abe5c3bc44e351ca6352e13534214"}
+{"level":"info","ts":1686368113.0832732,"msg":"---------- block hash ----------\n0x62872e72cc7080a3de420bad4eb2632ed085aadd589f0e89b949eba630b06eec"}
+{"level":"info","ts":1686368118.4084167,"msg":"---------- block hash ----------\n0x26382608d2ddd58ca6390d868cc8312ded6a686170baa370bd920cc4ecb6db9c"}
+{"level":"info","ts":1686368118.4098923,"msg":"\tOss:Authorize:: (phase=types.Phase{IsApplyExtrinsic:true, AsApplyExtrinsic:0x2, IsFinalization:false, IsInitialization:false})"}
+{"level":"info","ts":1686368118.410049,"msg":"\t\tacc : cXh5StobuVP4B7mGH9xn8dSsDtXks4qLAou8ZdkZ6DbB6zzxe, operator : cXjnKpzoxn44fBsxjVurWvuVSekPcjabMowXuNiW3KL3pUx9c"}
+{"level":"info","ts":1686368118.410049,"msg":"bingo!!!"}
+{"level":"info","ts":1686368118.6237743,"msg":"subscribe done"}
+{"level":"error","ts":1686369186.455477,"msg":"DecodeEventRecords error: unable to decode field 2 event #7 with EventID [0 0], field System_ExtrinsicSuccess: expected more bytes, but could not decode any more"}
+{"level":"info","ts":1686369210.5047123,"msg":"bingo!!!"}
+{"level":"info","ts":1686376144.2850952,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686376182.723086,"msg":"bingo!!!"}
+{"level":"info","ts":1686376245.4076083,"msg":"-------------------- start --------------------"}
+{"level":"error","ts":1686376251.660099,"msg":"DecodeEventRecords error: unable to find field System_ExtrinsicSuccess for event #0 with EventID [0 0]"}
+{"level":"error","ts":1686376251.6606567,"msg":"block hash: 0xec9f259c02edcc9f44c2359b22e33061629be992fe3810197094b46169b20c0c"}
+{"level":"error","ts":1686376254.6900184,"msg":"DecodeEventRecords error: unable to find field System_ExtrinsicSuccess for event #0 with EventID [0 0]"}
+{"level":"error","ts":1686376254.6900184,"msg":"block hash: 0x34144e0f9383c6d1b07e318ba72f3dcdc7150be4692e803f7662dd71a3ddc314"}
+{"level":"error","ts":1686376260.8428028,"msg":"DecodeEventRecords error: unable to find field System_ExtrinsicSuccess for event #0 with EventID [0 0]"}
+{"level":"error","ts":1686376260.8428028,"msg":"block hash: 0x5b7440f1db6cc256f3f4771da53446b4a250b7cb4e3100c64877e60c4b3de7f3"}
+{"level":"error","ts":1686376266.7299619,"msg":"DecodeEventRecords error: unable to find field System_ExtrinsicSuccess for event #0 with EventID [0 0]"}
+{"level":"error","ts":1686376266.7299619,"msg":"block hash: 0x9175be7fc9c4468e68137788812e4c6e1fa1dfb0ed1f6f72c5a668caf4a8ca00"}
+{"level":"error","ts":1686376272.8712845,"msg":"DecodeEventRecords error: unable to find field System_ExtrinsicSuccess for event #0 with EventID [0 0]"}
+{"level":"error","ts":1686376272.8718507,"msg":"block hash: 0x80b0fab4f0aa6a29f4c580c7cf035173d8c152bbd98d7652761a5e84e53e5850"}
+{"level":"info","ts":1686533843.9426472,"msg":"-------------------- start --------------------"}
+{"level":"error","ts":1686533843.9981158,"msg":"DecodeEventRecords error block hash : 0xb775d3e8efc4fd3a0d782bb3889ac0b2e84b6667062762e8cdac6fcbe2c0fd52"}
+{"level":"error","ts":1686533843.9981158,"msg":"DecodeEventRecords error : unable to find field System_ExtrinsicSuccess for event #0 with EventID [0 0]"}
+{"level":"error","ts":1686533844.065168,"msg":"DecodeEventRecords error block hash : 0xeee3d37aeeaf54be1a43e52bb3e36b03e052e82caa5b6b373273a444a1de3df9"}
+{"level":"error","ts":1686533844.065168,"msg":"DecodeEventRecords error : unable to find field System_ExtrinsicSuccess for event #0 with EventID [0 0]"}
+{"level":"error","ts":1686533850.0676901,"msg":"DecodeEventRecords error block hash : 0xe677ef1a684efeeae53b99c973c7a59886e3df3e2c8410c4534641bb08f42e05"}
+{"level":"error","ts":1686533850.068319,"msg":"DecodeEventRecords error : unable to find field System_ExtrinsicSuccess for event #0 with EventID [0 0]"}
+{"level":"info","ts":1686533946.4664516,"msg":"-------------------- start --------------------"}
+{"level":"error","ts":1686533946.5455651,"msg":"DecodeEventRecords error block hash : 0x1652b27fd35195fb123cf2efe0986caadb89daa032c00ea521b399d2e4176de6"}
+{"level":"error","ts":1686533946.5461345,"msg":"DecodeEventRecords error : unable to decode field 1 event #0 with EventID [0 0], field System_ExtrinsicSuccess: EOF"}
+{"level":"error","ts":1686533952.0670714,"msg":"DecodeEventRecords error block hash : 0x8a281ba1d88a4e45278c68c68bbccbf463e9537b655ba27d06d71c0154e64c63"}
+{"level":"error","ts":1686533952.067893,"msg":"DecodeEventRecords error : unable to decode field 1 event #0 with EventID [0 0], field System_ExtrinsicSuccess: EOF"}
+{"level":"info","ts":1686534206.4953809,"msg":"-------------------- start --------------------"}
+{"level":"error","ts":1686534234.5520525,"msg":"DecodeEventRecords error block hash : 0x323316d879f248962dd7a21e0e819518e53479901c02e2806021e605c6a259e0"}
+{"level":"error","ts":1686534234.5521567,"msg":"DecodeEventRecords error : unable to decode field 2 event #7 with EventID [0 0], field System_ExtrinsicSuccess: Encoded array length is higher than allowed by the protocol (32-bit unsigned integer)"}
+{"level":"info","ts":1686534240.4341502,"msg":"bingo!!!"}
+{"level":"info","ts":1686535350.9022863,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686537234.9116921,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686537820.5933695,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686538081.2386575,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686540408.4856372,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686550450.3880675,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686550729.1941314,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686550858.2423813,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686551443.7911167,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686551680.3515546,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686551737.2474637,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686551766.9388669,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686551976.7146685,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686551982.3207433,"msg":"------------------ 交易完成 ------------------\n0xbdec263278007b0afc9a4c150107e88c2b78976f9405bb7e5988fc4960be52d5\n"}
+{"level":"info","ts":1686552469.68197,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686552474.3287563,"msg":"------------------ 交易完成 ------------------\n0xd4cc8fa4a0b92b888cbba5a225b2ce04b5ddec373ac3595d50729d3054cc1cd4\n"}
+{"level":"info","ts":1686552804.8228898,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686552810.3175354,"msg":"------------------ 交易完成 ------------------\n0x00f7aea175abaaa2c4ab32b34db52c063a52f384ccc7a7db3e5b3507e562be26\n"}
+{"level":"info","ts":1686555080.5953891,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686555084.4043,"msg":"------------------ 交易完成 ------------------ : 0xe513f9b98c78ced57f8168da4d8d92a7bb14e7898cd3083bfe812f70c0745430"}
+{"level":"info","ts":1686555113.9316368,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686555114.4098015,"msg":"------------------ 交易完成 ------------------ : 0x0be9c25d53aba28b3b66028d1d61af6b091f2f9d2fc2122ad374aa781bd364eb"}
+{"level":"info","ts":1686555222.5257947,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686555228.4064376,"msg":"------------------ 交易完成 ------------------ : 0xcb82a247a176e88db5d3146f7c73a2f2fba751ff30247cdb99da39156f240029"}
+{"level":"error","ts":1686555228.41017,"msg":"DecodeEventRecords error block hash : [203 130 162 71 161 118 232 141 181 211 20 111 124 115 162 242 251 167 81 255 48 36 124 219 153 218 57 21 111 36 0 41]"}
+{"level":"error","ts":1686555228.410729,"msg":"DecodeEventRecords error : unable to find field HashrateMarket_MachineAdded for event #2 with EventID [7 0]"}
+{"level":"info","ts":1686555375.5324144,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686555378.4141579,"msg":"------------------ 交易完成 ------------------ : 0xf94feb41816bb9a3bdf00fca0718f32e4ad401d0e831e01a73064b89346d97c2"}
+{"level":"error","ts":1686555378.41859,"msg":"DecodeEventRecords error block hash : 0xf94feb41816bb9a3bdf00fca0718f32e4ad401d0e831e01a73064b89346d97c2"}
+{"level":"error","ts":1686555378.41859,"msg":"DecodeEventRecords error : unable to decode field 2 event #2 with EventID [7 0], field HashrateMarket_MachineAdded: Encoded array length is higher than allowed by the protocol (32-bit unsigned integer)"}
+{"level":"info","ts":1686555688.9842632,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686555690.4222007,"msg":"------------------ 交易完成 ------------------ : 0xb28ecc2bb4bb472cb9b90b093692f83e93c966274f456116a02b90b4b7458ccd"}
+{"level":"error","ts":1686555690.4254177,"msg":"DecodeEventRecords error block hash : 0xb28ecc2bb4bb472cb9b90b093692f83e93c966274f456116a02b90b4b7458ccd"}
+{"level":"error","ts":1686555690.4254177,"msg":"DecodeEventRecords error msg : unable to decode field 2 event #2 with EventID [7 0], field HashrateMarket_MachineAdded: Encoded array length is higher than allowed by the protocol (32-bit unsigned integer)"}
+{"level":"info","ts":1686555785.9765718,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686555786.4251463,"msg":"------------------ 交易完成 ------------------ : 0x8de49fcb1cfd28ad09f42a3e098b457ddd42bf22441d417ee225286f7a0ea3c7"}
+{"level":"info","ts":1686555839.6468809,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686555840.4215326,"msg":"------------------ 交易完成 ------------------ : 0x1b35ca6db89b9d034ea137934b65643f3165e64afafad4e30f1a24fc979cd033"}
+{"level":"info","ts":1686555873.5343401,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686555876.415954,"msg":"------------------ 交易完成 ------------------ : 0x2cff8e0adf4fabeaff1284682e542bac2739a14b6f78b5cc22397f433e541599"}
+{"level":"error","ts":1686555876.4244614,"msg":"DecodeEventRecords error block hash : 0x2cff8e0adf4fabeaff1284682e542bac2739a14b6f78b5cc22397f433e541599"}
+{"level":"error","ts":1686555876.4244614,"msg":"DecodeEventRecords error msg : unable to decode field 2 event #2 with EventID [7 0], field HashrateMarket_MachineAdded: Encoded array length is higher than allowed by the protocol (32-bit unsigned integer)"}
+{"level":"info","ts":1686556137.3819506,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686556140.4326725,"msg":"------------------ 交易完成 ------------------ : 0xf82818daa1d86c4297b7f72f8c931500f17d55ace50f348ac68a3ecfa8b5545a"}
+{"level":"error","ts":1686556140.4376712,"msg":"DecodeEventRecords error block hash : 0xf82818daa1d86c4297b7f72f8c931500f17d55ace50f348ac68a3ecfa8b5545a"}
+{"level":"error","ts":1686556140.4379137,"msg":"DecodeEventRecords error msg : unable to decode field 1 event #2 with EventID [7 0], field HashrateMarket_MachineAdded: expected more bytes, but could not decode any more"}
+{"level":"info","ts":1686556262.4863603,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686556266.4320927,"msg":"------------------ 交易完成 ------------------ : 0x57d3e3d9c37a3f7004136c87a29db874f69c6c7a4dd5ddb96d0e9afcd1182ae0"}
+{"level":"info","ts":1686556266.476134,"msg":"HashrateMarket:AddMachine:: (phase=types.Phase{IsApplyExtrinsic:true, AsApplyExtrinsic:0x1, IsFinalization:false, IsInitialization:false})"}
+{"level":"info","ts":1686556398.9958487,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686556404.437799,"msg":"------------------ 交易完成 ------------------ : 0xf8fceb0f78eb82e8fd98de921dd1191ecf22df3da24f600aa20e47abf937817a"}
+{"level":"info","ts":1686556404.4422064,"msg":"HashrateMarket:AddMachine:: (phase=types.Phase{IsApplyExtrinsic:true, AsApplyExtrinsic:0x1, IsFinalization:false, IsInitialization:false})"}
+{"level":"info","ts":1686556404.4427817,"msg":"owner : [92 226 114 37 146 85 123 65 194 53 159 236 51 103 247 130 112 55 6 120 79 25 58 188 115 91 147 122 186 231 30 48], MachineUUID : [227 153 17 251 3 199 160 10 178 158 80 235 246 182 98 2], metadata : [123 34 77 97 99 104 105 110 101 85 85 73 68 34 58 34 69 51 57 57 49 49 70 66 45 48 51 67 55 45 65 48 48 65 45 66 50 57 69 45 53 48 69 66 70 54 66 54 54 50 56 70 34 44 34 67 80 85 73 110 102 111 115 34 58 91 123 34 77 111 100 101 108 78 97 109 101 34 58 34 49 49 116 104 32 71 101 110 32 73 110 116 101 108 40 82 41 32 67 111 114 101 40 84 77 41 32 105 53 45 49 49 52 48 48 32 64 32 50 46 54 48 71 72 122 34 44 34 67 111 114 101 115 34 58 49 50 44 34 77 104 122 34 58 50 53 57 50 125 93 44 34 68 105 115 107 73 110 102 111 115 34 58 91 123 34 80 97 116 104 34 58 34 67 58 34 44 34 84 111 116 97 108 83 112 97 99 101 34 58 51 48 55 46 49 50 49 50 53 51 57 54 55 50 56 53 49 54 44 34 70 114 101 101 83 112 97 99 101 34 58 49 55 50 46 49 57 57 54 54 53 48 54 57 53 56 48 48 56 125 44 123 34 80 97 116 104 34 58 34 68 58 34 44 34 84 111 116 97 108 83 112 97 99 101 34 58 50 57 50 46 57 54 54 55 57 51 48 54 48 51 48 50 55 51 44 34 70 114 101 101 83 112 97 99 101 34 58 50 53 53 46 56 51 49 52 53 53 50 51 48 55 49 50 57 125 44 123 34 80 97 116 104 34 58 34 69 58 34 44 34 84 111 116 97 108 83 112 97 99 101 34 58 50 57 50 46 57 54 56 55 52 54 49 56 53 51 48 50 55 51 44 34 70 114 101 101 83 112 97 99 101 34 58 57 54 46 48 53 48 57 49 48 57 52 57 55 48 55 48 51 125 93 44 34 73 110 102 111 77 101 109 111 114 121 34 58 123 34 84 111 116 97 108 77 101 109 111 114 121 34 58 49 53 46 55 55 48 57 54 53 53 55 54 49 55 49 56 55 53 125 44 34 71 80 85 73 110 102 111 115 34 58 91 123 34 77 111 100 101 108 34 58 34 73 110 116 101 108 40 82 41 32 85 72 68 32 71 114 97 112 104 105 99 115 34 125 93 44 34 73 110 102 111 70 108 111 112 34 58 123 34 70 108 111 112 115 34 58 50 55 57 56 48 53 48 54 57 49 51 46 53 49 54 57 49 52 125 125]"}
+{"level":"info","ts":1686556535.9980931,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686556536.4383168,"msg":"------------------ 交易完成 ------------------ : 0x650cd8b11fdef27edfcc3b5720f1e8b94c03cf1e7f86ddca7381291d7ad36c1f"}
+{"level":"info","ts":1686556536.4424007,"msg":"HashrateMarket:AddMachine:: (phase=types.Phase{IsApplyExtrinsic:true, AsApplyExtrinsic:0x1, IsFinalization:false, IsInitialization:false})"}
+{"level":"info","ts":1686556536.4424007,"msg":"machineUUID : [227 153 17 251 3 199 160 10 178 158 80 235 246 182 98 3], MachineUUID : [227 153 17 251 3 199 160 10 178 158 80 235 246 182 98 3]"}
+{"level":"info","ts":1686556589.9067957,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686556590.4380188,"msg":"------------------ 交易完成 ------------------ : 0xc07fdcf9263b85254a811ba6ca669f856fd5006f33d731cf89e17002781918d7"}
+{"level":"info","ts":1686556590.4402993,"msg":"HashrateMarket:AddMachine:: (phase=types.Phase{IsApplyExtrinsic:true, AsApplyExtrinsic:0x1, IsFinalization:false, IsInitialization:false})"}
+{"level":"info","ts":1686556590.4402993,"msg":"machineUUID : [227 153 17 251 3 199 160 10 178 158 80 235 246 182 98 4], MachineUUID : [227 153 17 251 3 199 160 10 178 158 80 235 246 182 98 4]"}
+{"level":"info","ts":1686556590.4402993,"msg":"bingo!!!"}
+{"level":"info","ts":1686556867.6360433,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686556872.4476943,"msg":"------------------ 交易完成 ------------------ : 0x2ee7b25499ec24fcaa0db2e8b864c15b61832e2cfd8cedf6e46be19dc5eafe97"}
+{"level":"info","ts":1686556872.4517243,"msg":"add machine bingo!!!"}
+{"level":"info","ts":1686556905.3622806,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686556908.447172,"msg":"------------------ 交易完成 ------------------ : 0xfd5c73d7dfc4005dbdcca158b526a3809c28e83d45eb3d653673e9161a664193"}
+{"level":"info","ts":1686557038.8150957,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686557040.451479,"msg":"------------------ 交易完成 ------------------ : 0xec007cca634a8d8dff19adcd9cfac389766b1232997afedc74f2f2aeb3afef55"}
+{"level":"error","ts":1686557040.4561388,"msg":"Error: failed\n"}
+{"level":"info","ts":1686562937.5189135,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686562938.4837604,"msg":"------------------ 交易完成 ------------------ : 0xbb0401a24550ff86d903be34be161593ecf95095ddcd184fb70f05ebfb292f6f"}
+{"level":"error","ts":1686562938.4898756,"msg":"Error block : 0xbb0401a24550ff86d903be34be161593ecf95095ddcd184fb70f05ebfb292f6f, msg : failed\n"}
+{"level":"info","ts":1686563018.3346071,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686563022.4869406,"msg":"------------------ 交易完成 ------------------ : 0xafdc664a81471d6760fbfd0d2bba618e8ca956d16c0c28ddfd1e24de957078d9"}
+{"level":"error","ts":1686563022.492709,"msg":"Error block : 0xafdc664a81471d6760fbfd0d2bba618e8ca956d16c0c28ddfd1e24de957078d9, msg : failed\n"}

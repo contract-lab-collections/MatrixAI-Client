@@ -3,30 +3,29 @@ package pallets
 import (
 	"MatrixAI-Client/chain"
 	"MatrixAI-Client/chain/pattern"
-	"fmt"
+	"MatrixAI-Client/logs"
 	"github.com/centrifuge/go-substrate-rpc-client/v4/types"
 	"github.com/centrifuge/go-substrate-rpc-client/v4/types/codec"
+	"github.com/pkg/errors"
+	"time"
 )
 
-type OssWrapper struct {
+type WrapperOss struct {
 	*chain.InfoChain
 }
 
-func (chain *OssWrapper) Authorize(puk []byte) (string, error) {
+func (chain *WrapperOss) Authorize(puk []byte) (string, error) {
 
 	var (
 		txhash      string
 		accountInfo types.AccountInfo
 	)
 
-	address, err := types.NewAccountID(puk)
-	if err != nil {
-		return txhash, err
-	}
+	address, _ := types.NewAccountID(puk)
 
-	fmt.Printf("------------------ 构建交易 ------------------\n")
+	logs.Normal("------------------ 构建交易 ------------------")
 
-	call, err := types.NewCall(chain.Conn.Metadata, pattern.TX_OSS_REGISTER, *address)
+	call, err := types.NewCall(chain.Conn.Metadata, pattern.TX_OSS_REGISTER, address)
 	if err != nil {
 		return txhash, err
 	}
@@ -57,16 +56,33 @@ func (chain *OssWrapper) Authorize(puk []byte) (string, error) {
 		return txhash, err
 	}
 
-	hash, err := chain.Conn.Api.RPC.Author.SubmitExtrinsic(ext)
+	//hash, err := chain.Conn.Api.RPC.Author.SubmitExtrinsic(ext)
+	sub, err := chain.Conn.Api.RPC.Author.SubmitAndWatchExtrinsic(ext)
 	if err != nil {
 		return txhash, err
 	}
-	txhash, _ = codec.EncodeToHex(hash)
 
-	fmt.Printf("------------------ 提交交易 ------------------\n%+v\n", txhash)
-	return txhash, nil
+	defer sub.Unsubscribe()
+	//txhash, _ = codec.EncodeToHex(hash)
+
+	timeout := time.NewTimer(time.Second * time.Duration(12))
+	defer timeout.Stop()
+
+	for {
+		select {
+		case status := <-sub.Chan():
+			if status.IsInBlock {
+				txhash, _ = codec.EncodeToHex(status.AsInBlock)
+				return txhash, nil
+			}
+		case err = <-sub.Err():
+			return txhash, errors.Wrap(err, "[WatchExtrinsic]")
+		case <-timeout.C:
+			return txhash, errors.Wrap(err, "[Watch timeout]")
+		}
+	}
 }
 
-func NewOssWrapper(info *chain.InfoChain) *OssWrapper {
-	return &OssWrapper{info}
+func NewOssWrapper(info *chain.InfoChain) *WrapperOss {
+	return &WrapperOss{info}
 }
