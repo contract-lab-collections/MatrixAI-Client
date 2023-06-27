@@ -3,15 +3,16 @@ package pallets
 import (
 	"MatrixAI-Client/chain"
 	"MatrixAI-Client/chain/events"
-	"MatrixAI-Client/chain/pattern"
-	"MatrixAI-Client/hardwareinfo"
 	"MatrixAI-Client/logs"
+	"MatrixAI-Client/machine_info"
+	"MatrixAI-Client/pattern"
 	"MatrixAI-Client/utils"
 	"encoding/json"
 	"fmt"
 	"github.com/centrifuge/go-substrate-rpc-client/v4/types"
 	"github.com/centrifuge/go-substrate-rpc-client/v4/types/codec"
 	"github.com/pkg/errors"
+	"strconv"
 	"time"
 )
 
@@ -19,63 +20,42 @@ type WrapperMatrix struct {
 	*chain.InfoChain
 }
 
-func (chain WrapperMatrix) AddMachine(hardwareInfo hardwareinfo.HardwareInfo) (string, error) {
+func (chain WrapperMatrix) AddMachine(hardwareInfo machine_info.MachineInfo) (string, error) {
+	logs.Normal(fmt.Sprintf("Extrinsic : %v", pattern.TX_HASHRATE_MARKET_REGISTER))
 
 	var (
 		txhash      string
 		accountInfo types.AccountInfo
 	)
 
-	uuid, err := utils.ParseUUID(string(hardwareInfo.MachineUUID))
-	//uuid, err := utils.ParseUUID("E39911FB-03C7-A00A-B29E-50EBF6B66205")
+	machineUUID, err := utils.ParseMachineUUID(string(hardwareInfo.MachineUUID))
 	if err != nil {
-		return txhash, errors.New(fmt.Sprintf("Error parsing uuid: %v", err))
-	}
-
-	var machineUUID pattern.MachineUUID
-	for i := 0; i < len(machineUUID); i++ {
-		machineUUID[i] = types.U8(uuid[i])
+		return txhash, fmt.Errorf("error parsing uuid: %v", err)
 	}
 
 	jsonData, err := json.Marshal(hardwareInfo)
 	if err != nil {
-		return txhash, errors.New(fmt.Sprintf("Error marshaling the struct to JSON: %v", err))
+		return txhash, fmt.Errorf("error marshaling the struct to JSON: %v", err)
 	}
 
-	key, err := types.CreateStorageKey(chain.Conn.Metadata, pattern.SYSTEM, pattern.ACCOUNT, chain.Wallet.KeyringPair.PublicKey)
+	err = chain.GetNonce(&accountInfo)
 	if err != nil {
-		return txhash, errors.New(fmt.Sprintf("Error creating storage key: %v", err))
-	}
-
-	_, err = chain.Conn.Api.RPC.State.GetStorageLatest(key, &accountInfo)
-	if err != nil {
-		return txhash, errors.New(fmt.Sprintf("Error getting storage latest: %v", err))
+		return txhash, fmt.Errorf("error getting nonce: %v", err)
 	}
 
 	call, err := types.NewCall(chain.Conn.Metadata, pattern.TX_HASHRATE_MARKET_REGISTER, machineUUID, types.NewBytes(jsonData))
 	if err != nil {
-		return txhash, errors.New(fmt.Sprintf("Error creating call: %v", err))
+		return txhash, fmt.Errorf("error creating call: %v", err)
 	}
 
-	options := types.SignatureOptions{
-		BlockHash:          chain.Conn.GenesisHash,
-		Era:                types.ExtrinsicEra{IsMortalEra: false},
-		GenesisHash:        chain.Conn.GenesisHash,
-		Nonce:              types.NewUCompactFromUInt(uint64(accountInfo.Nonce)),
-		SpecVersion:        chain.Conn.RuntimeVersion.SpecVersion,
-		Tip:                types.NewUCompactFromUInt(0),
-		TransactionVersion: chain.Conn.RuntimeVersion.TransactionVersion,
-	}
-
-	ext := types.NewExtrinsic(call)
-	err = ext.Sign(chain.Wallet.KeyringPair, options)
+	ext, err := chain.GetSign(accountInfo, call)
 	if err != nil {
-		return txhash, errors.New(fmt.Sprintf("Error signing the extrinsic: %v", err))
+		return txhash, fmt.Errorf("error getting sign: %v", err)
 	}
 
 	sub, err := chain.Conn.Api.RPC.Author.SubmitAndWatchExtrinsic(ext)
 	if err != nil {
-		return txhash, errors.New(fmt.Sprintf("Error submitting extrinsic: %v", err))
+		return txhash, fmt.Errorf("error submitting extrinsic: %v", err)
 	}
 
 	defer sub.Unsubscribe()
@@ -93,12 +73,12 @@ func (chain WrapperMatrix) AddMachine(hardwareInfo hardwareinfo.HardwareInfo) (s
 				txhash, _ = codec.EncodeToHex(status.AsInBlock)
 				h, err := chain.Conn.Api.RPC.State.GetStorageRaw(chain.Conn.KeyEvents, status.AsInBlock)
 				if err != nil {
-					return txhash, errors.Wrap(err, "[GetStorageRaw]")
+					return txhash, fmt.Errorf("error getting storage raw: %v", err)
 				}
 
 				err = types.EventRecordsRaw(*h).DecodeEventRecords(chain.Conn.Metadata, &tEvents)
 				if err != nil {
-					return txhash, errors.New(fmt.Sprintf("DecodeEventRecords error : %v", err))
+					return txhash, fmt.Errorf("DecodeEventRecords error : %v", err)
 				}
 
 				for _, e := range tEvents.HashrateMarket_MachineAdded {
@@ -110,11 +90,182 @@ func (chain WrapperMatrix) AddMachine(hardwareInfo hardwareinfo.HardwareInfo) (s
 				return txhash, errors.New(pattern.ERR_Failed)
 			}
 		case err = <-sub.Err():
-			return txhash, errors.Wrap(err, "[WatchExtrinsic]")
+			return txhash, fmt.Errorf("error submitting extrinsic: %v", err)
 		case <-timeout.C:
 			return txhash, errors.New(pattern.ERR_Timeout)
 		}
 	}
+}
+
+func (chain WrapperMatrix) OrderCompleted(orderId pattern.OrderId, orderPlacedMetadata pattern.OrderPlacedMetadata) (string, error) {
+	logs.Normal(fmt.Sprintf("Extrinsic : %v", pattern.TX_HASHRATE_MARKET_ORDER_COMPLETED))
+
+	var (
+		txhash      string
+		accountInfo types.AccountInfo
+	)
+
+	// ---------- 临时测试 ----------
+	orderPlacedMetadata.ModelUrl = "https://cess.com/"
+	orderPlacedMetadata.CompleteTime = strconv.FormatInt(time.Now().Unix(), 10)
+	// ---------- 临时测试 ----------
+
+	jsonData, err := json.Marshal(orderPlacedMetadata)
+	if err != nil {
+		return txhash, fmt.Errorf("error marshaling the struct to JSON: %v", err)
+	}
+
+	err = chain.GetNonce(&accountInfo)
+	if err != nil {
+		return txhash, fmt.Errorf("error getting nonce: %v", err)
+	}
+
+	call, err := types.NewCall(chain.Conn.Metadata, pattern.TX_HASHRATE_MARKET_ORDER_COMPLETED, orderId, types.NewBytes(jsonData))
+	if err != nil {
+		return txhash, fmt.Errorf("error creating call: %v", err)
+	}
+
+	ext, err := chain.GetSign(accountInfo, call)
+	if err != nil {
+		return txhash, fmt.Errorf("error getting sign: %v", err)
+	}
+
+	sub, err := chain.Conn.Api.RPC.Author.SubmitAndWatchExtrinsic(ext)
+	if err != nil {
+		return txhash, fmt.Errorf("error submitting extrinsic: %v", err)
+	}
+
+	defer sub.Unsubscribe()
+
+	timeout := time.NewTimer(time.Second * time.Duration(12))
+	defer timeout.Stop()
+
+	for {
+		select {
+		case status := <-sub.Chan():
+			if status.IsInBlock {
+				logs.Result(fmt.Sprintf("------------------ 交易完成 ------------------ : %#x", status.AsInBlock))
+
+				tEvents := events.EventRecords{}
+				txhash, _ = codec.EncodeToHex(status.AsInBlock)
+				h, err := chain.Conn.Api.RPC.State.GetStorageRaw(chain.Conn.KeyEvents, status.AsInBlock)
+				if err != nil {
+					return txhash, fmt.Errorf("error getting storage raw: %v", err)
+				}
+
+				err = types.EventRecordsRaw(*h).DecodeEventRecords(chain.Conn.Metadata, &tEvents)
+				if err != nil {
+					return txhash, fmt.Errorf("DecodeEventRecords error : %v", err)
+				}
+
+				for _, e := range tEvents.HashrateMarket_OrderCompleted {
+					if codec.Eq(e.OrderId, orderId) {
+						logs.Result("order completed bingo!!!")
+						return txhash, nil
+					}
+				}
+				return txhash, errors.New(pattern.ERR_Failed)
+			}
+		case err = <-sub.Err():
+			return txhash, fmt.Errorf("error submitting extrinsic: %v", err)
+		case <-timeout.C:
+			return txhash, errors.New(pattern.ERR_Timeout)
+		}
+	}
+}
+
+func (chain WrapperMatrix) RemoveMachine(hardwareInfo machine_info.MachineInfo) (string, error) {
+	logs.Normal(fmt.Sprintf("Extrinsic : %s", pattern.TX_HASHRATE_MARKET_REMOVE_MACHINE))
+
+	var (
+		txhash      string
+		accountInfo types.AccountInfo
+	)
+
+	machineUUID, err := utils.ParseMachineUUID(string(hardwareInfo.MachineUUID))
+	if err != nil {
+		return txhash, fmt.Errorf("error parsing uuid: %v", err)
+	}
+
+	err = chain.GetNonce(&accountInfo)
+	if err != nil {
+		return txhash, fmt.Errorf("error getting nonce: %v", err)
+	}
+
+	call, err := types.NewCall(chain.Conn.Metadata, pattern.TX_HASHRATE_MARKET_REMOVE_MACHINE, machineUUID)
+	if err != nil {
+		return txhash, fmt.Errorf("error creating call: %v", err)
+	}
+
+	ext, err := chain.GetSign(accountInfo, call)
+	if err != nil {
+		return txhash, fmt.Errorf("error getting sign: %v", err)
+	}
+
+	sub, err := chain.Conn.Api.RPC.Author.SubmitAndWatchExtrinsic(ext)
+	if err != nil {
+		return txhash, fmt.Errorf("error submitting extrinsic: %v", err)
+	}
+
+	defer sub.Unsubscribe()
+
+	timeout := time.NewTimer(time.Second * time.Duration(12))
+	defer timeout.Stop()
+
+	for {
+		select {
+		case status := <-sub.Chan():
+			if status.IsInBlock {
+				logs.Result(fmt.Sprintf("------------------ 交易完成 ------------------ : %#x", status.AsInBlock))
+
+				tEvents := events.EventRecords{}
+				txhash, _ = codec.EncodeToHex(status.AsInBlock)
+				h, err := chain.Conn.Api.RPC.State.GetStorageRaw(chain.Conn.KeyEvents, status.AsInBlock)
+				if err != nil {
+					return txhash, fmt.Errorf("error getting storage raw: %v", err)
+				}
+
+				err = types.EventRecordsRaw(*h).DecodeEventRecords(chain.Conn.Metadata, &tEvents)
+				if err != nil {
+					return txhash, fmt.Errorf("DecodeEventRecords error : %v", err)
+				}
+
+				for _, e := range tEvents.HashrateMarket_MachineRemoved {
+					if codec.Eq(e.Id, machineUUID) {
+						logs.Result("Machine Removed bingo!!!")
+						return txhash, nil
+					}
+				}
+				return txhash, errors.New(pattern.ERR_Failed)
+			}
+		case err = <-sub.Err():
+			return txhash, fmt.Errorf("error submitting extrinsic: %v", err)
+		case <-timeout.C:
+			return txhash, errors.New(pattern.ERR_Timeout)
+		}
+	}
+}
+
+func (chain WrapperMatrix) GetMachine(hardwareInfo machine_info.MachineInfo) (pattern.MachineDetails, error) {
+
+	var data pattern.MachineDetails
+
+	machineUUID, err := utils.ParseMachineUUID(string(hardwareInfo.MachineUUID))
+	if err != nil {
+		return data, errors.New(fmt.Sprintf("Error parsing uuid: %v", err))
+	}
+
+	id, err := codec.Encode(machineUUID)
+	key, err := types.CreateStorageKey(chain.Conn.Metadata, pattern.HASHRATE_MARKET, pattern.MACHINE, chain.Wallet.KeyringPair.PublicKey, id)
+	if err != nil {
+		return data, errors.New(fmt.Sprintf("Error creating %s %s storage key: %v", pattern.HASHRATE_MARKET, pattern.MACHINE, err))
+	}
+
+	_, err = chain.Conn.Api.RPC.State.GetStorageLatest(key, &data)
+	if err != nil {
+		return data, errors.New(fmt.Sprintf("Error getting %s %s storage: %v", pattern.HASHRATE_MARKET, pattern.MACHINE, err))
+	}
+	return data, nil
 }
 
 func NewMatrixWrapper(info *chain.InfoChain) *WrapperMatrix {

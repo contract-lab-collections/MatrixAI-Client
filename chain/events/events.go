@@ -1,20 +1,28 @@
 package events
 
 import (
-	"MatrixAI-Client/chain/pattern"
+	"MatrixAI-Client/pattern"
 	"github.com/centrifuge/go-substrate-rpc-client/v4/types"
 )
 
 type EventRecords struct {
 	MatrixAiEventRecords
 
-	CessEventRecords
+	//CessEventRecords
 
 	types.EventRecords
 }
 
 type MatrixAiEventRecords struct {
 	HashrateMarket_MachineAdded []Event_MachineAdded
+
+	HashrateMarket_OfferMaked []Event_OfferMaked
+
+	HashrateMarket_OrderPlaced []Event_OrderPlaced
+
+	HashrateMarket_OrderCompleted []Event_OrderCompleted
+
+	HashrateMarket_MachineRemoved []Event_MachineRemoved
 }
 
 type CessEventRecords struct {
@@ -81,6 +89,40 @@ type Event_MachineAdded struct {
 	Id       pattern.MachineUUID
 	Metadata types.Bytes
 	Topics   []types.Hash
+}
+
+type Event_OfferMaked struct {
+	Phase  types.Phase
+	Owner  types.AccountID
+	Id     pattern.MachineUUID
+	Price  types.U128
+	Topics []types.Hash
+}
+
+type Event_OrderPlaced struct {
+	Phase     types.Phase
+	OrderId   pattern.OrderId
+	Buyer     types.AccountID
+	Seller    types.AccountID
+	MachineId pattern.MachineUUID
+	Total     types.U128
+	Metadata  types.Bytes
+	Topics    []types.Hash
+}
+
+type Event_OrderCompleted struct {
+	Phase   types.Phase
+	OrderId pattern.OrderId
+	Buyer   types.AccountID
+	Seller  types.AccountID
+	Topics  []types.Hash
+}
+
+type Event_MachineRemoved struct {
+	Phase  types.Phase
+	Owner  types.AccountID
+	Id     pattern.MachineUUID
+	Topics []types.Hash
 }
 
 type Event_Authorize struct {

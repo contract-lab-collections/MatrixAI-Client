@@ -36,9 +36,9 @@ func (chain *WrapperAnalysis) AnalysisEvents(blockHashes <-chan types.Hash, quit
 			return
 		}
 
-		fmt.Printf("Oss_Authorize len : %v\n", len(events.Oss_Authorize))
-		if len(events.Oss_Authorize) > 0 {
-			acc := events.Oss_Authorize[0].Acc
+		fmt.Printf("HashrateMarket_OrderPlaced len : %v\n", len(events.HashrateMarket_OrderPlaced))
+		if len(events.HashrateMarket_OrderPlaced) > 0 {
+			acc := events.HashrateMarket_OrderPlaced[0].Buyer
 			fmt.Println("解析到事件，通知主循环停止订阅", acc)
 			close(quitChan) // 通知主循环停止订阅
 

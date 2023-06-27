@@ -2,8 +2,8 @@ package pallets
 
 import (
 	"MatrixAI-Client/chain"
-	"MatrixAI-Client/chain/pattern"
 	"MatrixAI-Client/logs"
+	"MatrixAI-Client/pattern"
 	"github.com/centrifuge/go-substrate-rpc-client/v4/types"
 	"github.com/centrifuge/go-substrate-rpc-client/v4/types/codec"
 	"github.com/pkg/errors"

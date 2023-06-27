@@ -1,7 +1,7 @@
 package conn
 
 import (
-	"MatrixAI-Client/chain/pattern"
+	"MatrixAI-Client/pattern"
 	gsrpc "github.com/centrifuge/go-substrate-rpc-client/v4"
 	"github.com/centrifuge/go-substrate-rpc-client/v4/types"
 )

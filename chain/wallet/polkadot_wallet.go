@@ -3,7 +3,6 @@ package polkadot_wallet
 import (
 	"MatrixAI-Client/config"
 	"MatrixAI-Client/utils"
-
 	"github.com/centrifuge/go-substrate-rpc-client/v4/signature"
 )
 

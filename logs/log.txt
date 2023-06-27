@@ -126,3 +126,320 @@
 {"level":"info","ts":1686563018.3346071,"msg":"-------------------- start --------------------"}
 {"level":"info","ts":1686563022.4869406,"msg":"------------------ 交易完成 ------------------ : 0xafdc664a81471d6760fbfd0d2bba618e8ca956d16c0c28ddfd1e24de957078d9"}
 {"level":"error","ts":1686563022.492709,"msg":"Error block : 0xafdc664a81471d6760fbfd0d2bba618e8ca956d16c0c28ddfd1e24de957078d9, msg : failed\n"}
+{"level":"info","ts":1686563874.5220942,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686563880.5442884,"msg":"------------------ 交易完成 ------------------ : 0x601dbeb6ffcfa87bbf535c7577490cf04a8051442f944148291d61e4f1da8d0e"}
+{"level":"error","ts":1686563880.551622,"msg":"Error block : 0x601dbeb6ffcfa87bbf535c7577490cf04a8051442f944148291d61e4f1da8d0e, msg : failed\n"}
+{"level":"info","ts":1686569306.6240804,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686569310.6338868,"msg":"------------------ 交易完成 ------------------ : 0x7658ca868b2b8958618a39277848ca9ef4cdd466258112f450096cbea1bf9e1b"}
+{"level":"error","ts":1686569310.6381104,"msg":"Error block : 0x7658ca868b2b8958618a39277848ca9ef4cdd466258112f450096cbea1bf9e1b, msg : failed\n"}
+{"level":"error","ts":1686569310.6382701,"msg":"failed"}
+{"level":"info","ts":1686569374.0226197,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686569376.6344607,"msg":"------------------ 交易完成 ------------------ : 0x619d3aa99b9ad73363b114a1d877aa7030a973976bfc44b1bdef9d448b8a8f1e"}
+{"level":"error","ts":1686569376.6392634,"msg":"Error block : 0x619d3aa99b9ad73363b114a1d877aa7030a973976bfc44b1bdef9d448b8a8f1e, msg : failed\n"}
+{"level":"error","ts":1686569376.6392634,"msg":"failed"}
+{"level":"info","ts":1686569572.8970263,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686569574.6335351,"msg":"------------------ 交易完成 ------------------ : 0x31f6a3b3b0740d0a21a61f59beb92d60f40ee214a524763990f49db13442d0b7"}
+{"level":"error","ts":1686569574.6400561,"msg":"Error block : 0x31f6a3b3b0740d0a21a61f59beb92d60f40ee214a524763990f49db13442d0b7, msg : failed\n"}
+{"level":"error","ts":1686569574.6400561,"msg":"failed"}
+{"level":"error","ts":1686619945.028504,"msg":"Required flag \"mnemonic\" not set"}
+{"level":"info","ts":1686619988.573607,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686620073.9039116,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686620077.405162,"msg":"------------------ 交易完成 ------------------ : 0x91e90da197594a907c2efb15320ca4795dab5c987b28a3cc9bd7f6807650ca4c"}
+{"level":"error","ts":1686620077.4107146,"msg":"Error block : 0x91e90da197594a907c2efb15320ca4795dab5c987b28a3cc9bd7f6807650ca4c, msg : failed\n"}
+{"level":"error","ts":1686620077.4108236,"msg":"failed"}
+{"level":"info","ts":1686620720.1508434,"msg":"-------------------- start --------------------"}
+{"level":"error","ts":1686620720.4192266,"msg":"Error block : , msg : Error submitting extrinsic: Invalid Transaction\n"}
+{"level":"error","ts":1686620720.4197326,"msg":"Error submitting extrinsic: Invalid Transaction"}
+{"level":"info","ts":1686620839.2628908,"msg":"-------------------- start --------------------"}
+{"level":"error","ts":1686620839.502486,"msg":"Error block : , msg : Error submitting extrinsic: Invalid Transaction\n"}
+{"level":"error","ts":1686620839.502486,"msg":"Error submitting extrinsic: Invalid Transaction"}
+{"level":"info","ts":1686620855.519382,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686620857.4050386,"msg":"------------------ 交易完成 ------------------ : 0xf94838f615bbaae6061736f7f03b771f1e9466195a9a87aa8e6f12bfb9834828"}
+{"level":"error","ts":1686620857.408609,"msg":"Error block : 0xf94838f615bbaae6061736f7f03b771f1e9466195a9a87aa8e6f12bfb9834828, msg : failed\n"}
+{"level":"error","ts":1686620857.408609,"msg":"failed"}
+{"level":"info","ts":1686620946.9675307,"msg":"-------------------- start --------------------"}
+{"level":"error","ts":1686620947.2689784,"msg":"Error block : , msg : Error submitting extrinsic: Invalid Transaction\n"}
+{"level":"error","ts":1686620947.2689784,"msg":"Error submitting extrinsic: Invalid Transaction"}
+{"level":"info","ts":1686621082.6635451,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686621085.4024174,"msg":"------------------ 交易完成 ------------------ : 0x7f52f100e799fa6e6c9be0a1849bf3eaf051869239bef3f130bcf82a79514015"}
+{"level":"error","ts":1686621085.4078367,"msg":"Error block : 0x7f52f100e799fa6e6c9be0a1849bf3eaf051869239bef3f130bcf82a79514015, msg : failed\n"}
+{"level":"error","ts":1686621085.4078367,"msg":"failed"}
+{"level":"info","ts":1686636167.374154,"msg":"-------------------- start --------------------"}
+{"level":"error","ts":1686636167.7152178,"msg":"Error getting HashrateMarket Machine storage: type *pattern.FileMetadata does not support Decodeable interface and could not be decoded field by field, error: Cannot read the required number of bytes 16, only 1 available"}
+{"level":"info","ts":1686636432.368138,"msg":"-------------------- start --------------------"}
+{"level":"error","ts":1686636432.6097767,"msg":"Error: Error getting HashrateMarket Machine storage: type *pattern.FileMetadata does not support Decodeable interface and could not be decoded field by field, error: Cannot read the required number of bytes 16, only 1 available"}
+{"level":"error","ts":1686636432.6097767,"msg":"Error getting HashrateMarket Machine storage: type *pattern.FileMetadata does not support Decodeable interface and could not be decoded field by field, error: Cannot read the required number of bytes 16, only 1 available"}
+{"level":"info","ts":1686636965.2397106,"msg":"-------------------- start --------------------"}
+{"level":"error","ts":1686636965.4870756,"msg":"Error: Error getting HashrateMarket Machine storage: type *pattern.FileMetadata does not support Decodeable interface and could not be decoded field by field, error: Cannot read the required number of bytes 16, only 1 available"}
+{"level":"error","ts":1686636965.4876232,"msg":"Error getting HashrateMarket Machine storage: type *pattern.FileMetadata does not support Decodeable interface and could not be decoded field by field, error: Cannot read the required number of bytes 16, only 1 available"}
+{"level":"info","ts":1686637201.5050333,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686637201.8370662,"msg":"machine info: {{\"MachineUUID\":\"E39911FB-03C7-A00A-B29E-50EBF6B6628F\",\"CPUInfos\":[{\"ModelName\":\"11th Gen Intel(R) Core(TM) i5-11400 @ 2.60GHz\",\"Cores\":12,\"Mhz\":2592}],\"DiskInfos\":[{\"Path\":\"C:\",\"TotalSpace\":307.12125396728516,\"FreeSpace\":172.2666473388672},{\"Path\":\"D:\",\"TotalSpace\":292.96679306030273,\"FreeSpace\":255.8314552307129},{\"Path\":\"E:\",\"TotalSpace\":292.96874618530273,\"FreeSpace\":96.05145645141602}],\"InfoMemory\":{\"TotalMemory\":15.770965576171875},\"GPUInfos\":[{\"Model\":\"Intel(R) UHD Graphics\"}],\"InfoFlop\":{\"Flops\":31863200658.506145}} {true false false} {{false} {<nil>}}}"}
+{"level":"info","ts":1686638458.920631,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686638459.1499612,"msg":"Machine Info : {Metadata:{\"MachineUUID\":\"E39911FB-03C7-A00A-B29E-50EBF6B6628F\",\"CPUInfos\":[{\"ModelName\":\"11th Gen Intel(R) Core(TM) i5-11400 @ 2.60GHz\",\"Cores\":12,\"Mhz\":2592}],\"DiskInfos\":[{\"Path\":\"C:\",\"TotalSpace\":307.12125396728516,\"FreeSpace\":172.2666473388672},{\"Path\":\"D:\",\"TotalSpace\":292.96679306030273,\"FreeSpace\":255.8314552307129},{\"Path\":\"E:\",\"TotalSpace\":292.96874618530273,\"FreeSpace\":96.05145645141602}],\"InfoMemory\":{\"TotalMemory\":15.770965576171875},\"GPUInfos\":[{\"Model\":\"Intel(R) UHD Graphics\"}],\"InfoFlop\":{\"Flops\":31863200658.506145}} Status:{Idle:true ForRent:false Renting:false} Price:{option:{hasValue:false} value:{Int:<nil>}}}"}
+{"level":"info","ts":1686639858.1745932,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686639858.4160337,"msg":"Machine Info : {Metadata:{\"MachineUUID\":\"E39911FB-03C7-A00A-B29E-50EBF6B6628F\",\"CPUInfos\":[{\"ModelName\":\"11th Gen Intel(R) Core(TM) i5-11400 @ 2.60GHz\",\"Cores\":12,\"Mhz\":2592}],\"DiskInfos\":[{\"Path\":\"C:\",\"TotalSpace\":307.12125396728516,\"FreeSpace\":172.2666473388672},{\"Path\":\"D:\",\"TotalSpace\":292.96679306030273,\"FreeSpace\":255.8314552307129},{\"Path\":\"E:\",\"TotalSpace\":292.96874618530273,\"FreeSpace\":96.05145645141602}],\"InfoMemory\":{\"TotalMemory\":15.770965576171875},\"GPUInfos\":[{\"Model\":\"Intel(R) UHD Graphics\"}],\"InfoFlop\":{\"Flops\":31863200658.506145}} Status:{Idle:true ForRent:false Renting:false} Price:{option:{hasValue:false} value:{Int:<nil>}}}"}
+{"level":"info","ts":1686639858.4165893,"msg":"Decoded JSON Object:\n{MachineUUID:E39911FB-03C7-A00A-B29E-50EBF6B6628F CPUInfos:[{ModelName:11th Gen Intel(R) Core(TM) i5-11400 @ 2.60GHz Cores:12 Mhz:2592}] DiskInfos:[{Path:C: TotalSpace:307.12125396728516 FreeSpace:172.2666473388672} {Path:D: TotalSpace:292.96679306030273 FreeSpace:255.8314552307129} {Path:E: TotalSpace:292.96874618530273 FreeSpace:96.05145645141602}] MemoryInfo:{TotalMemory:15.770965576171875} GPUInfos:[{Model:Intel(R) UHD Graphics}] FlopsInfo:{Flops:3.1863200658506145e+10}}\n"}
+{"level":"info","ts":1686639993.9690402,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686639994.1876686,"msg":"Machine Info : {Metadata:{\"MachineUUID\":\"E39911FB-03C7-A00A-B29E-50EBF6B6628F\",\"CPUInfos\":[{\"ModelName\":\"11th Gen Intel(R) Core(TM) i5-11400 @ 2.60GHz\",\"Cores\":12,\"Mhz\":2592}],\"DiskInfos\":[{\"Path\":\"C:\",\"TotalSpace\":307.12125396728516,\"FreeSpace\":172.2666473388672},{\"Path\":\"D:\",\"TotalSpace\":292.96679306030273,\"FreeSpace\":255.8314552307129},{\"Path\":\"E:\",\"TotalSpace\":292.96874618530273,\"FreeSpace\":96.05145645141602}],\"InfoMemory\":{\"TotalMemory\":15.770965576171875},\"GPUInfos\":[{\"Model\":\"Intel(R) UHD Graphics\"}],\"InfoFlop\":{\"Flops\":31863200658.506145}} Status:{Idle:true ForRent:false Renting:false} Price:{option:{hasValue:false} value:{Int:<nil>}}}"}
+{"level":"info","ts":1686639994.1887915,"msg":"Decoded JSON Object : {MachineUUID:E39911FB-03C7-A00A-B29E-50EBF6B6628F CPUInfos:[{ModelName:11th Gen Intel(R) Core(TM) i5-11400 @ 2.60GHz Cores:12 Mhz:2592}] DiskInfos:[{Path:C: TotalSpace:307.12125396728516 FreeSpace:172.2666473388672} {Path:D: TotalSpace:292.96679306030273 FreeSpace:255.8314552307129} {Path:E: TotalSpace:292.96874618530273 FreeSpace:96.05145645141602}] MemoryInfo:{TotalMemory:15.770965576171875} GPUInfos:[{Model:Intel(R) UHD Graphics}] FlopsInfo:{Flops:3.1863200658506145e+10}}"}
+{"level":"info","ts":1686639994.1887915,"msg":"Machine already exists"}
+{"level":"info","ts":1686640067.2650537,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686640067.4742825,"msg":"Machine Info : {Metadata:{\"MachineUUID\":\"E39911FB-03C7-A00A-B29E-50EBF6B6628F\",\"CPUInfos\":[{\"ModelName\":\"11th Gen Intel(R) Core(TM) i5-11400 @ 2.60GHz\",\"Cores\":12,\"Mhz\":2592}],\"DiskInfos\":[{\"Path\":\"C:\",\"TotalSpace\":307.12125396728516,\"FreeSpace\":172.2666473388672},{\"Path\":\"D:\",\"TotalSpace\":292.96679306030273,\"FreeSpace\":255.8314552307129},{\"Path\":\"E:\",\"TotalSpace\":292.96874618530273,\"FreeSpace\":96.05145645141602}],\"InfoMemory\":{\"TotalMemory\":15.770965576171875},\"GPUInfos\":[{\"Model\":\"Intel(R) UHD Graphics\"}],\"InfoFlop\":{\"Flops\":31863200658.506145}} Status:{Idle:true ForRent:false Renting:false} Price:{option:{hasValue:false} value:{Int:<nil>}}}"}
+{"level":"info","ts":1686640067.47486,"msg":"Decoded JSON Object : {MachineUUID:E39911FB-03C7-A00A-B29E-50EBF6B6628F CPUInfos:[{ModelName:11th Gen Intel(R) Core(TM) i5-11400 @ 2.60GHz Cores:12 Mhz:2592}] DiskInfos:[{Path:C: TotalSpace:307.12125396728516 FreeSpace:172.2666473388672} {Path:D: TotalSpace:292.96679306030273 FreeSpace:255.8314552307129} {Path:E: TotalSpace:292.96874618530273 FreeSpace:96.05145645141602}] MemoryInfo:{TotalMemory:15.770965576171875} GPUInfos:[{Model:Intel(R) UHD Graphics}] FlopsInfo:{Flops:3.1863200658506145e+10}}"}
+{"level":"info","ts":1686646013.7681537,"msg":"-------------------- start --------------------"}
+{"level":"error","ts":1686646065.3564034,"msg":"Required flag \"url\" not set"}
+{"level":"error","ts":1686646078.908537,"msg":"flag needs an argument: -url"}
+{"level":"info","ts":1686646152.5145142,"msg":"url: 1"}
+{"level":"info","ts":1686646260.782158,"msg":"url: d.cess.cloud/2059866837.py"}
+{"level":"error","ts":1686646260.7827132,"msg":"Head \"d.cess.cloud/2059866837.py\": unsupported protocol scheme \"\""}
+{"level":"info","ts":1686646289.851641,"msg":"url: https://d.cess.cloud/2059866837.py"}
+{"level":"info","ts":1686646291.8794055,"msg":"resp name: datasets\\abb6eebe02c3ed5382eb8dd8ec9dc871e0519cd3e06ad1125f8adad0fd985438"}
+{"level":"info","ts":1686646390.5326161,"msg":"url: https://d.cess.cloud/2059866837.py"}
+{"level":"info","ts":1686646391.7646039,"msg":"resp name: datasets\\abb6eebe02c3ed5382eb8dd8ec9dc871e0519cd3e06ad1125f8adad0fd985438"}
+{"level":"info","ts":1686731965.074688,"msg":"-------------------- start --------------------"}
+{"level":"error","ts":1686731965.5437572,"msg":"Error decoding JSON: unexpected end of JSON input"}
+{"level":"error","ts":1686731965.5437572,"msg":"unexpected end of JSON input"}
+{"level":"info","ts":1686732096.530653,"msg":"-------------------- start --------------------"}
+{"level":"error","ts":1686732096.8240232,"msg":"Error decoding JSON: unexpected end of JSON input"}
+{"level":"error","ts":1686732096.8245726,"msg":"unexpected end of JSON input"}
+{"level":"info","ts":1686732328.9796624,"msg":"-------------------- start --------------------"}
+{"level":"error","ts":1686732329.2757463,"msg":"Error decoding JSON: unexpected end of JSON input"}
+{"level":"error","ts":1686732329.2757463,"msg":"unexpected end of JSON input"}
+{"level":"info","ts":1686732375.163262,"msg":"-------------------- start --------------------"}
+{"level":"error","ts":1686732375.3657043,"msg":"Error decoding JSON: unexpected end of JSON input"}
+{"level":"error","ts":1686732375.366289,"msg":"unexpected end of JSON input"}
+{"level":"info","ts":1686732580.2355404,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686732583.434481,"msg":"------------------ 交易完成 ------------------ : 0x7f1b2179b590510ba28a8fa9e11cff7afa03b55181a9bbeedd934c740c3aadcb"}
+{"level":"info","ts":1686732583.4376616,"msg":"add machine bingo!!!"}
+{"level":"error","ts":1686793356.2925265,"msg":"Required flag \"start\" not set"}
+{"level":"info","ts":1686793762.8755782,"msg":"start paddle client"}
+{"level":"info","ts":1686794382.0538952,"msg":"start paddle client"}
+{"level":"error","ts":1686794382.0728734,"msg":"rpc error: code = Unknown desc = Exception calling application: 3 has type int, but expected one of: bytes"}
+{"level":"info","ts":1686794992.281606,"msg":"start paddle client"}
+{"level":"info","ts":1686796751.190034,"msg":"-------------------- start --------------------"}
+{"level":"error","ts":1686796751.5124242,"msg":"Error: Error parsing uuid: invalid UUID format"}
+{"level":"error","ts":1686796751.5129933,"msg":"Error parsing uuid: invalid UUID format"}
+{"level":"info","ts":1686796837.438422,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686796842.1605587,"msg":"------------------ 交易完成 ------------------ : 0xab1c96a36bd57991baf403d9fa4ffb6001ad8d4579316da879168a49ba0f0cba"}
+{"level":"info","ts":1686796842.164203,"msg":"add machine bingo!!!"}
+{"level":"info","ts":1686796872.6164567,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686796878.1599588,"msg":"------------------ 交易完成 ------------------ : 0x4851710937179448b1bde3f3c66d6648ac2f5bfc5e497b401cbb9ed5cc78ce6b"}
+{"level":"info","ts":1686796878.164301,"msg":"add machine bingo!!!"}
+{"level":"error","ts":1686796890.1594403,"msg":"DecodeEventRecords error block hash : 0x9d34cb76b8432ea555959c58f2311c3842170c76ea0d4291ee6ce4666283f952"}
+{"level":"error","ts":1686796890.1600218,"msg":"DecodeEventRecords error : unable to find field HashrateMarket_OfferMaked for event #2 with EventID [7 2]"}
+{"level":"error","ts":1686796968.1663377,"msg":"DecodeEventRecords error block hash : 0x72130ef849fc5680364b559945eae43e6774838e3d44ead05d2467e422799e43"}
+{"level":"error","ts":1686796968.167013,"msg":"DecodeEventRecords error : unable to find field HashrateMarket_OrderPlaced for event #3 with EventID [7 4]"}
+{"level":"info","ts":1686798895.451574,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686799620.0253801,"msg":"-------------------- start --------------------"}
+{"level":"error","ts":1686799632.1306102,"msg":"DecodeEventRecords error block hash : 0xfbe8a78398e06f293983569e9ae49fcb3fb199c310e69b5012c33d0607788067"}
+{"level":"error","ts":1686799632.1311321,"msg":"DecodeEventRecords error : unable to find field HashrateMarket_OfferCanceled for event #2 with EventID [7 3]"}
+{"level":"info","ts":1686799831.9310203,"msg":"-------------------- start --------------------"}
+{"level":"error","ts":1686799872.1435723,"msg":"DecodeEventRecords error block hash : 0x43377434429571f4c60e1daeb549cea0cd3f9863cff15b6cce7bef170e155c54"}
+{"level":"error","ts":1686799872.1441898,"msg":"DecodeEventRecords error : unable to find field HashrateMarket_OrderPlaced for event #3 with EventID [7 4]"}
+{"level":"info","ts":1686810704.5276172,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686810750.190943,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686810756.3925889,"msg":"------------------ 交易完成 ------------------ : 0xd506373932af7f92a2d6c78142a96ba7aaf25736124358711667650a91a14c81"}
+{"level":"info","ts":1686810756.3969688,"msg":"add machine bingo!!!"}
+{"level":"info","ts":1686810828.3983655,"msg":"Subscribe HashrateMarket_OrderPlaced bingo!!!"}
+{"level":"info","ts":1686812269.7151546,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686812274.3515131,"msg":"------------------ 交易完成 ------------------ : 0x514a2a4a5f631ac15a00949146a4c15e8b3078dfb71dfa0c1ac4d6ec1e8efab0"}
+{"level":"info","ts":1686812274.3536837,"msg":"add machine bingo!!!"}
+{"level":"info","ts":1686812340.360709,"msg":"Subscribe HashrateMarket_OrderPlaced bingo!!!"}
+{"level":"info","ts":1686817898.9968092,"msg":"-------------------- start --------------------"}
+{"level":"error","ts":1686817899.238684,"msg":"Error block : , msg : error submitting extrinsic: Invalid Transaction\n"}
+{"level":"error","ts":1686817899.238684,"msg":"error submitting extrinsic: Invalid Transaction"}
+{"level":"info","ts":1686818434.8966959,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686818436.497827,"msg":"------------------ 交易完成 ------------------ : 0x3978551ae341f1555d0a3f4ee7d9a5219a90957f7d0cbd3c6fd64af882ed5a30"}
+{"level":"info","ts":1686818436.5017774,"msg":"add machine bingo!!!"}
+{"level":"info","ts":1686818586.4860413,"msg":"Subscribe HashrateMarket_OrderPlaced : 0x49c1e3e33c9f2c53e0acdb0d2af0df900092fd9bae3ebf099aa7271f03e0af8a"}
+{"level":"info","ts":1686818596.4957929,"msg":"------------------ 交易完成 ------------------ : 0x58466908f54b0d594b9614864ffdebf97492d46607cc0265ab3d0c676c499e14"}
+{"level":"info","ts":1686878775.6282537,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686878778.560354,"msg":"------------------ 交易完成 ------------------ : 0xf0877ee776fc2db26f3bd7ac082478afc35bfc849100e40b1c46bff0282e08a7"}
+{"level":"info","ts":1686878778.5635452,"msg":"add machine bingo!!!"}
+{"level":"info","ts":1686878886.5681722,"msg":"Subscribe HashrateMarket_OrderPlaced : 0x0aff743e642e2a4ffe13b38d935fbb43e2d82e1bb5fcb7f2e1df8bbb0d2c651a"}
+{"level":"info","ts":1686878898.5669188,"msg":"------------------ 交易完成 ------------------ : 0xce50e95ac009558cdff93532b9d30252f5cfc5086e987c645ad3776d4cdf8956"}
+{"level":"error","ts":1686878898.5725808,"msg":"failed"}
+{"level":"error","ts":1686878898.5730972,"msg":"failed"}
+{"level":"info","ts":1686879248.1805847,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686879252.5792313,"msg":"------------------ 交易完成 ------------------ : 0xb52c4b7d742cc5f0de584224aa832dab79f7c0e94be2354c2ae579dfaa8a497c"}
+{"level":"info","ts":1686879252.5832138,"msg":"add machine bingo!!!"}
+{"level":"info","ts":1686879324.5762246,"msg":"Subscribe HashrateMarket_OrderPlaced : 0xd3c75c8fd3d0078ccc4f67bc81211c63f22ef84a9536e6063c70f3c1998408cb"}
+{"level":"info","ts":1686879336.5747118,"msg":"------------------ 交易完成 ------------------ : 0xf31ba5d835777f6ffdc8637f874717874a50ac0001d39ed349880a75f33fc6fa"}
+{"level":"error","ts":1686879336.5808516,"msg":"DecodeEventRecords error : unable to find field HashrateMarket_OrderCompleted for event #4 with EventID [7 5]"}
+{"level":"error","ts":1686879336.5814743,"msg":"DecodeEventRecords error : unable to find field HashrateMarket_OrderCompleted for event #4 with EventID [7 5]"}
+{"level":"info","ts":1686885947.5885468,"msg":"-------------------- start --------------------"}
+{"level":"error","ts":1686885947.8360655,"msg":"Error block : , msg : error submitting extrinsic: Invalid Transaction\n"}
+{"level":"error","ts":1686885947.8360655,"msg":"error submitting extrinsic: Invalid Transaction"}
+{"level":"info","ts":1686885978.9332078,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686885984.6710064,"msg":"------------------ 交易完成 ------------------ : 0x772fbcaa45b20bee785e4908c0b0fecc355e27e7addfb292f7004092e4750257"}
+{"level":"info","ts":1686885984.6739793,"msg":"add machine bingo!!!"}
+{"level":"info","ts":1686886110.6698725,"msg":"Subscribe HashrateMarket_OrderPlaced : 0x19a9c31cc58bfc4ac16039d8d88a2b2f9bee8948a1cac570a3960e72e6ab261b"}
+{"level":"info","ts":1686886122.6708853,"msg":"------------------ 交易完成 ------------------ : 0xb4e04c6f3fca6b29464336461e6a3d8ab0577ea6830b5bafd00a8fa1f49a0ec0"}
+{"level":"error","ts":1686886122.6753051,"msg":"DecodeEventRecords error : unable to find field HashrateMarket_OrderCompleted for event #4 with EventID [7 5]"}
+{"level":"error","ts":1686886122.6753051,"msg":"DecodeEventRecords error : unable to find field HashrateMarket_OrderCompleted for event #4 with EventID [7 5]"}
+{"level":"info","ts":1686895880.707622,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686895884.8089616,"msg":"------------------ 交易完成 ------------------ : 0x6c5629b8ab7a865668410c0bb3b128a1ad9d5f5cce48468118f43a9985e68912"}
+{"level":"info","ts":1686895884.813204,"msg":"add machine bingo!!!"}
+{"level":"info","ts":1686896322.8206105,"msg":"Subscribe HashrateMarket_OrderPlaced : 0xd8bb8416cd1bd72446f514707fe2f6d1d10081e9f34cef1672281a03d2bd2ffa"}
+{"level":"info","ts":1686896334.8133593,"msg":"------------------ 交易完成 ------------------ : 0x3567877b6b6ec5bbdc0ad7815917066b02f00a9102d392dee9ef3b3061e507dc"}
+{"level":"info","ts":1686896334.8161128,"msg":"order completed bingo!!!"}
+{"level":"info","ts":1686897945.9388566,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686897948.810635,"msg":"------------------ 交易完成 ------------------ : 0xd87aa06bcff90556c21602ac2b1f9ffbbef2b94f0631cab971c207861428ea1e"}
+{"level":"info","ts":1686897948.8143501,"msg":"add machine bingo!!!"}
+{"level":"info","ts":1686898176.871199,"msg":"Subscribe HashrateMarket_OrderPlaced : 0x49afb929274a4eacb1bb19d8379148cf06454d2a351acc08c189038162e79ab1"}
+{"level":"info","ts":1686898188.81751,"msg":"------------------ 交易完成 ------------------ : 0x45eda6398ac51fb1cf225637f565d708e844e662a2ba7b99581ae2b5aa23254e"}
+{"level":"info","ts":1686898188.8208148,"msg":"order completed bingo!!!"}
+{"level":"info","ts":1686898794.1625385,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686903434.0784616,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686903438.8770735,"msg":"------------------ 交易完成 ------------------ : 0x7be7d4b7c3f378ec8bbee8d32e20a224381c02511edc9f122a709fda24c4a6b7"}
+{"level":"error","ts":1686903438.8829987,"msg":"Error block : 0x7be7d4b7c3f378ec8bbee8d32e20a224381c02511edc9f122a709fda24c4a6b7, msg : DecodeEventRecords error : unable to find field HashrateMarket_MachineRemoved for event #2 with EventID [7 1]\n"}
+{"level":"error","ts":1686903438.883647,"msg":"DecodeEventRecords error : unable to find field HashrateMarket_MachineRemoved for event #2 with EventID [7 1]"}
+{"level":"info","ts":1686903749.4932346,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686903750.9092612,"msg":"------------------ 交易完成 ------------------ : 0x547a247e4c317212e928ad3ac2330b698f5638dda6c5062111a29006c8ecc139"}
+{"level":"error","ts":1686903750.950726,"msg":"Error block : 0x547a247e4c317212e928ad3ac2330b698f5638dda6c5062111a29006c8ecc139, msg : failed\n"}
+{"level":"error","ts":1686903750.951338,"msg":"failed"}
+{"level":"info","ts":1686903865.316716,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686903870.8841128,"msg":"------------------ 交易完成 ------------------ : 0x4a7d258999ca67ee6cf64645771638fb66a360553212d78dfedcaaa4cf30d976"}
+{"level":"info","ts":1686903870.8876054,"msg":"add machine bingo!!!"}
+{"level":"info","ts":1686904479.070641,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686904528.6961014,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686904557.906605,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686904560.8903985,"msg":"------------------ 交易完成 ------------------ : 0x9b1ed2fc29f4627e42bee69f4cff68606dffca6782b0aea4eb1d06c57a0cd3e3"}
+{"level":"info","ts":1686904560.8914287,"msg":"Subscribe HashrateMarket_MachineRemoved : 0x9b1ed2fc29f4627e42bee69f4cff68606dffca6782b0aea4eb1d06c57a0cd3e3"}
+{"level":"info","ts":1686904560.8928063,"msg":"Machine Removed bingo!!!"}
+{"level":"info","ts":1686904560.8948457,"msg":"RemoveMachine done, block : 0x9b1ed2fc29f4627e42bee69f4cff68606dffca6782b0aea4eb1d06c57a0cd3e3\n"}
+{"level":"info","ts":1686904572.8876247,"msg":"------------------ 交易完成 ------------------ : 0x76d9aa96d2cf62f8060de811d5e086c56e0a9a5ee5dda6831eb25b698f017e2a"}
+{"level":"error","ts":1686904572.8936205,"msg":"failed"}
+{"level":"error","ts":1686904572.8936682,"msg":"failed"}
+{"level":"info","ts":1686905062.2773688,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686905099.3095083,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686905159.6301217,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686905269.9338627,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686905311.4865308,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686905317.0021172,"msg":"------------------ 交易完成 ------------------ : 0x39ccfa2c3f5d812bf292c3ab19423e767817d3013f17a2de2899fd88e424d8a9"}
+{"level":"info","ts":1686905317.006935,"msg":"add machine bingo!!!"}
+{"level":"info","ts":1686905327.0371945,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686905328.9840589,"msg":"------------------ 交易完成 ------------------ : 0xb0daa41de4da4a0aaa452f471dcf9693dbdbb016a89d4b2883a937dc8c7e8a48"}
+{"level":"info","ts":1686905328.9842403,"msg":"Subscribe HashrateMarket_MachineRemoved : 0xb0daa41de4da4a0aaa452f471dcf9693dbdbb016a89d4b2883a937dc8c7e8a48"}
+{"level":"info","ts":1686905328.9864242,"msg":"Stop the client."}
+{"level":"info","ts":1686905328.9873211,"msg":"Machine Removed bingo!!!"}
+{"level":"info","ts":1686908213.438506,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686908214.9859369,"msg":"------------------ 交易完成 ------------------ : 0xe3138c687f23514953d17eba86697b9c1199e53c16875513be29fab6c8ffaa32"}
+{"level":"info","ts":1686908214.9905925,"msg":"add machine bingo!!!"}
+{"level":"info","ts":1686908225.455114,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1686908226.9663723,"msg":"------------------ 交易完成 ------------------ : 0x8b063579e6c6b1838cbc8e5070f96e4f0bed093bd3eacf61e2a4224588856c95"}
+{"level":"info","ts":1686908226.966976,"msg":"Subscribe HashrateMarket_MachineRemoved : 0x8b063579e6c6b1838cbc8e5070f96e4f0bed093bd3eacf61e2a4224588856c95"}
+{"level":"info","ts":1686908226.9689047,"msg":"Stop the client."}
+{"level":"info","ts":1686908226.9709299,"msg":"Machine Removed bingo!!!"}
+{"level":"info","ts":1686967823.4481251,"msg":"start paddle client"}
+{"level":"info","ts":1686967902.9816086,"msg":"start paddle client"}
+{"level":"info","ts":1687140236.9404805,"msg":"-------------------- start --------------------"}
+{"level":"error","ts":1687140237.3215222,"msg":"Error block : , msg : error submitting extrinsic: Invalid Transaction\n"}
+{"level":"error","ts":1687140237.3215222,"msg":"error submitting extrinsic: Invalid Transaction"}
+{"level":"info","ts":1687140275.3143673,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1687140276.094202,"msg":"------------------ 交易完成 ------------------ : 0x5960131c2038cf39ccff155610e6ceca636735805d4ef5ca24d135f8a3f06628"}
+{"level":"info","ts":1687140276.098455,"msg":"add machine bingo!!!"}
+{"level":"info","ts":1687140330.0827773,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1687140336.1011827,"msg":"------------------ 交易完成 ------------------ : 0x7ca8f5674e50ec3a44a48138afc3face27e8bf4a43cc27e8c5157a5953cb8b33"}
+{"level":"info","ts":1687140336.1025655,"msg":"Subscribe HashrateMarket_MachineRemoved : 0x7ca8f5674e50ec3a44a48138afc3face27e8bf4a43cc27e8c5157a5953cb8b33"}
+{"level":"info","ts":1687140336.1056015,"msg":"Stop the client."}
+{"level":"info","ts":1687140336.1062832,"msg":"Machine Removed bingo!!!"}
+{"level":"info","ts":1687140525.93938,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1687140528.0983648,"msg":"------------------ 交易完成 ------------------ : 0x1b64947c913e6f4c77305c8de7602aca5b39ca91ceac794283d34760aa865425"}
+{"level":"info","ts":1687140528.1024675,"msg":"add machine bingo!!!"}
+{"level":"info","ts":1687140541.7376032,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1687140546.1045425,"msg":"------------------ 交易完成 ------------------ : 0x87c24562f1259dd13a2ff6160abea8caa68ebf68f38e8d5a8fa5ee7e7cc84344"}
+{"level":"info","ts":1687140546.105066,"msg":"Subscribe HashrateMarket_MachineRemoved : 0x87c24562f1259dd13a2ff6160abea8caa68ebf68f38e8d5a8fa5ee7e7cc84344"}
+{"level":"info","ts":1687140546.1070561,"msg":"Machine Removed bingo!!!"}
+{"level":"info","ts":1687140546.1311476,"msg":"Stop the client."}
+{"level":"info","ts":1687154077.056855,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1687154082.279468,"msg":"------------------ 交易完成 ------------------ : 0x9da9cfd55a23e14957fd449074b046f5559db400ee8dc3769cd5677611405237"}
+{"level":"info","ts":1687154082.3333435,"msg":"add machine bingo!!!"}
+{"level":"info","ts":1687156578.322045,"msg":"Subscribe HashrateMarket_OrderPlaced : 0x033ab853a0af027d21e368143fd5e7fb744bd24ec79b8707d1627bda4bf7fa3f"}
+{"level":"info","ts":1687156590.32003,"msg":"------------------ 交易完成 ------------------ : 0x3406007097877ac6ee72eeabbe371b944010b3afe80fd5f35b0e7a0a3dbc8eae"}
+{"level":"info","ts":1687156590.384362,"msg":"order completed bingo!!!"}
+{"level":"error","ts":1687156818.3850346,"msg":"DecodeEventRecords error block hash : 0xaa5c6f9d4af48632c2aed05e4861eee5bd1de7f37c97de2fea3cecf783219cb7 , msg : unable to find field HashrateMarket_OfferCanceled for event #2 with EventID [7 3]"}
+{"level":"error","ts":1687156818.3856504,"msg":"DecodeEventRecords error block hash : 0xaa5c6f9d4af48632c2aed05e4861eee5bd1de7f37c97de2fea3cecf783219cb7 , msg : unable to find field HashrateMarket_OfferCanceled for event #2 with EventID [7 3]"}
+{"level":"info","ts":1687157053.9955008,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1687157556.339985,"msg":"Subscribe HashrateMarket_OrderPlaced : 0x96aea184b2958cfc55d5c1957c4527849e90ef0bd2577c19c7b513851eddefd0"}
+{"level":"info","ts":1687157568.3379111,"msg":"------------------ 交易完成 ------------------ : 0x91fb9ed73ce6106fa71ce5627e73b30aa5a316745f970951f986bdb580eca970"}
+{"level":"info","ts":1687157568.3636053,"msg":"order completed bingo!!!"}
+{"level":"error","ts":1687158558.3552938,"msg":"DecodeEventRecords error block hash : 0xa62094cb94b220b988b7458c9daa44952b9b14aac7e7f7d84e7cd2f88781ccce , msg : unable to find field HashrateMarket_OfferCanceled for event #2 with EventID [7 3]"}
+{"level":"error","ts":1687158720.3626592,"msg":"DecodeEventRecords error block hash : 0x9f2c28aa0faccd2747eff9e7dbc0d5b77b1f333489f979cdfec5f09416a7a6a5 , msg : unable to find field HashrateMarket_OfferCanceled for event #2 with EventID [7 3]"}
+{"level":"info","ts":1687159195.59811,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1687159200.361994,"msg":"------------------ 交易完成 ------------------ : 0x7dbf1173cc2cd988f7d8b025993ac98bd106aea1d8b16e7f022df6519318762b"}
+{"level":"info","ts":1687159200.3645482,"msg":"Subscribe HashrateMarket_MachineRemoved : 0x7dbf1173cc2cd988f7d8b025993ac98bd106aea1d8b16e7f022df6519318762b"}
+{"level":"info","ts":1687159200.384476,"msg":"Machine Removed bingo!!!"}
+{"level":"info","ts":1687159200.3901916,"msg":"Stop the client."}
+{"level":"info","ts":1687159409.7737553,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1687159410.3689501,"msg":"------------------ 交易完成 ------------------ : 0xeab21ad691e168b5ce16cdd744e1069d7145ef2073aec243c29b114ff16d0094"}
+{"level":"info","ts":1687159410.3943708,"msg":"add machine bingo!!!"}
+{"level":"info","ts":1687160418.6656187,"msg":"Subscribe HashrateMarket_OrderPlaced : 0x0d9638f31c592668d92bfc5f0872c0f9f78e04d9fac88523c158d1646341ae22"}
+{"level":"info","ts":1687160430.3896513,"msg":"------------------ 交易完成 ------------------ : 0xd1b9c74e01519a5cc6b9c001c2278c508c5d555a940de74b22174cd71d2218bc"}
+{"level":"info","ts":1687160430.4169154,"msg":"order completed bingo!!!"}
+{"level":"info","ts":1687161480.403035,"msg":"Subscribe HashrateMarket_OrderPlaced : 0x81ad159230668da9d9def902273697e293640ac49bc6067040f570bb66441dd0"}
+{"level":"info","ts":1687161492.4007244,"msg":"------------------ 交易完成 ------------------ : 0x32d50bd742918d5e661a19f452905386404606daa3f071d4dd7358074f3215d5"}
+{"level":"info","ts":1687161492.4258573,"msg":"order completed bingo!!!"}
+{"level":"error","ts":1687162746.431541,"msg":"DecodeEventRecords error block hash : 0x053b40fae2f706c1bed73d7904215ec160558dfde8212778160a09ee50232f1c , msg : unable to find field HashrateMarket_OfferCanceled for event #2 with EventID [7 3]"}
+{"level":"info","ts":1687162950.4247985,"msg":"Subscribe HashrateMarket_OrderPlaced : 0xc067f70a613be6918a0b0fad596fa53300b845af81cb8db68e203968c24ab59b"}
+{"level":"info","ts":1687162962.4239752,"msg":"------------------ 交易完成 ------------------ : 0xf30f7268cbe06e846c938bad953bbab4fcef4ec50a024bf9afffdfb6fb33401a"}
+{"level":"info","ts":1687162962.4486845,"msg":"order completed bingo!!!"}
+{"level":"error","ts":1687163004.4268937,"msg":"DecodeEventRecords error block hash : 0xa6ce1067f4e27abc1ee49dd0d6a3d89531933a51ebb147c0624a0acc1017da97 , msg : unable to find field HashrateMarket_OfferCanceled for event #2 with EventID [7 3]"}
+{"level":"info","ts":1687166400.4859254,"msg":"Subscribe HashrateMarket_OrderPlaced : 0xe84f54f07013c48d0cf51ff2b0e13404391addbd3cdb3f74ba934c7adc5048b1"}
+{"level":"info","ts":1687166412.4801872,"msg":"------------------ 交易完成 ------------------ : 0x83f712192cbd0a294d07b6db7aa09a49c67b65c60e5c87f784a8cac5099a2c77"}
+{"level":"info","ts":1687166412.5048661,"msg":"order completed bingo!!!"}
+{"level":"info","ts":1687173192.6045558,"msg":"Subscribe HashrateMarket_OrderPlaced : 0xcf8a37e0b4027ef35257538a90725e5ae818bf61d4f80c57633803ee7188cefc"}
+{"level":"info","ts":1687173204.6016185,"msg":"------------------ 交易完成 ------------------ : 0x9ed3be67e2b82f019ab4cf9a19b3238d3ad962797fce6c5c7f3ad88e5f7e0fd2"}
+{"level":"info","ts":1687173204.640707,"msg":"order completed bingo!!!"}
+{"level":"info","ts":1687174464.6146257,"msg":"Subscribe HashrateMarket_OrderPlaced : 0x6a59832681205600bd1662bc239ecbee02f3cef05ee2977c1533f16e79d4847f"}
+{"level":"info","ts":1687174476.6125185,"msg":"------------------ 交易完成 ------------------ : 0xc8cd7a75e7dfb313b50b8520a129b7b78f651ed03b43c8bb3950da693286fd05"}
+{"level":"info","ts":1687174476.6373801,"msg":"order completed bingo!!!"}
+{"level":"error","ts":1687227793.5177314,"msg":"json.Unmarshal error : json: cannot unmarshal number into Go struct field OrderPlacedMetadata.price of type string"}
+{"level":"error","ts":1687227793.5177314,"msg":"json.Unmarshal error : json: cannot unmarshal number into Go struct field OrderPlacedMetadata.price of type string"}
+{"level":"info","ts":1687228092.099656,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1687228093.4760692,"msg":"------------------ 交易完成 ------------------ : 0x7cc8e006a2e34cb6a2274ddb31e651da2efe906745eeb075056eb215b58e0930"}
+{"level":"info","ts":1687228093.4993987,"msg":"Machine Removed bingo!!!"}
+{"level":"info","ts":1687228739.915862,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1687228747.4992306,"msg":"------------------ 交易完成 ------------------ : 0x6d9b54e98d57ae2b97dabd9decb1bff83b4fb407ff859ab4ff3bb5e9ef3d1421"}
+{"level":"info","ts":1687228747.539482,"msg":"add machine bingo!!!"}
+{"level":"info","ts":1687232236.5600584,"msg":"-------------------- start --------------------"}
+{"level":"error","ts":1687232575.5794566,"msg":"json.Unmarshal error : json: cannot unmarshal string into Go struct field OrderPlacedMetadata.duration of type int"}
+{"level":"error","ts":1687232575.5800123,"msg":"json.Unmarshal error : json: cannot unmarshal string into Go struct field OrderPlacedMetadata.duration of type int"}
+{"level":"info","ts":1687232715.0245798,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1687232871.8143988,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1687232875.5518425,"msg":"Subscribe HashrateMarket_MachineRemoved : 0x8ca54f63f8f62f5aa5b0a25764dabbd9b8e9c65d103c67fbc47883972775ef9b"}
+{"level":"info","ts":1687232875.5523582,"msg":"------------------ 交易完成 ------------------ : 0x8ca54f63f8f62f5aa5b0a25764dabbd9b8e9c65d103c67fbc47883972775ef9b"}
+{"level":"info","ts":1687232875.5769331,"msg":"Stop the client."}
+{"level":"info","ts":1687232875.5779557,"msg":"Machine Removed bingo!!!"}
+{"level":"info","ts":1687232883.2378354,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1687232887.5631979,"msg":"------------------ 交易完成 ------------------ : 0xaa9303c17d917b14491b72323039dc1c95ea88840801f157d2a66081c606b76e"}
+{"level":"info","ts":1687232887.5980842,"msg":"add machine bingo!!!"}
+{"level":"info","ts":1687232965.5544145,"msg":"Subscribe HashrateMarket_OrderPlaced : 0x5f9d8ef578767cfa7110e1bbda88da7860960c5f1f230231ac8e0715371dceed"}
+{"level":"info","ts":1687232977.5548172,"msg":"------------------ 交易完成 ------------------ : 0x09dcf335e4c14e050f9175f9dd8ff72c29b6f957f1b295299d02013fe26250b9"}
+{"level":"info","ts":1687232977.5803628,"msg":"order completed bingo!!!"}
+{"level":"error","ts":1687233013.554283,"msg":"DecodeEventRecords error block hash : 0x75b53c4ed6af8bf9c280501ae715d64ce5ccc126b13bb4d627f6e2b8c4c4ed46 , msg : unable to find field HashrateMarket_OfferCanceled for event #2 with EventID [7 3]"}
+{"level":"info","ts":1687233187.5575457,"msg":"Subscribe HashrateMarket_OrderPlaced : 0x75f785c5225e73d46a49b02d096fdfb8c9f6fa2fb0a2354b4fb79a97aab53ba0"}
+{"level":"info","ts":1687233199.5573578,"msg":"------------------ 交易完成 ------------------ : 0x7fbf311ceaf06d94483561d5c3909f77218d632bf5962c8bd9d844f868557cd5"}
+{"level":"info","ts":1687233199.5831785,"msg":"order completed bingo!!!"}
+{"level":"info","ts":1687233361.5698738,"msg":"Subscribe HashrateMarket_OrderPlaced : 0x20931079cdd2b101c7d0aa66103480e4fdd51840ed038509e96e66123ba13c05"}
+{"level":"info","ts":1687233373.5675495,"msg":"------------------ 交易完成 ------------------ : 0xdec9284afb6424e0b159e7b8eb5c363e345d0ed0743a1c09b2a33954891558c2"}
+{"level":"info","ts":1687233373.5924058,"msg":"order completed bingo!!!"}
+{"level":"info","ts":1687233499.5625172,"msg":"Subscribe HashrateMarket_OrderPlaced : 0x970a078820dbc195e3082a47522061654a42c44b0dc2895f2ca6d2e7877e8953"}
+{"level":"info","ts":1687233511.5627248,"msg":"------------------ 交易完成 ------------------ : 0x44cf119e4f9a8ee80445018788e4861fa2e8e8a9715a1f8f67190cba33037d54"}
+{"level":"info","ts":1687233511.5878403,"msg":"order completed bingo!!!"}
+{"level":"info","ts":1687233583.563521,"msg":"Subscribe HashrateMarket_OrderPlaced : 0xff17290dee3536da1ac34aca0880f5901c6df906a01fe78f316068262a82f8e6"}
+{"level":"info","ts":1687233595.5631514,"msg":"------------------ 交易完成 ------------------ : 0x8b9d34f54929c6f2a6489e61fd55b3b4f8bd5b57ef77dcce5731d494d6703704"}
+{"level":"info","ts":1687233595.587138,"msg":"order completed bingo!!!"}
+{"level":"info","ts":1687263009.5557077,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1687263012.0522492,"msg":"------------------ 交易完成 ------------------ : 0xe5c67918849009efd7436847bccea527f09f750d709448edc74a377883438250"}
+{"level":"info","ts":1687263012.0522492,"msg":"Subscribe HashrateMarket_MachineRemoved : 0xe5c67918849009efd7436847bccea527f09f750d709448edc74a377883438250"}
+{"level":"info","ts":1687263012.0870829,"msg":"Stop the client."}
+{"level":"info","ts":1687263012.0870829,"msg":"Machine Removed bingo!!!"}
+{"level":"info","ts":1687331101.918046,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1687331112.414522,"msg":"------------------ 交易完成 ------------------ : 0x4d17f18d59f50bbeed1d8b9f8c5055933eb1f8c77377e53f3e1788043727a9bd"}
+{"level":"info","ts":1687331112.5835664,"msg":"add machine bingo!!!"}
+{"level":"info","ts":1687334229.990771,"msg":"-------------------- start --------------------"}
+{"level":"info","ts":1687334232.4624684,"msg":"------------------ 交易完成 ------------------ : 0xf6faecd91ea6256c7e5526d16590c9a6db441a8dbe03d9fc292ff6eb850aae51"}
+{"level":"info","ts":1687334232.463743,"msg":"Subscribe HashrateMarket_MachineRemoved : 0xf6faecd91ea6256c7e5526d16590c9a6db441a8dbe03d9fc292ff6eb850aae51"}
+{"level":"info","ts":1687334232.5006168,"msg":"Stop the client."}
+{"level":"info","ts":1687334232.7439916,"msg":"Machine Removed bingo!!!"}

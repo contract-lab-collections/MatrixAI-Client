@@ -9,11 +9,10 @@ package utils
 
 import (
 	"bytes"
-	"errors"
 	"fmt"
-	"github.com/centrifuge/go-substrate-rpc-client/v4/types"
-
 	"github.com/btcsuite/btcutil/base58"
+	"github.com/centrifuge/go-substrate-rpc-client/v4/types"
+	"github.com/pkg/errors"
 	"golang.org/x/crypto/blake2b"
 )
 
@@ -82,15 +81,15 @@ func EncodePublicKeyAsSubstrateAccount(publicKey []byte) (string, error) {
 
 func EncodePublicKeyAsCessAccount(publicKey []byte) (string, error) {
 	if len(publicKey) != 32 {
-		return "", errors.New("Invalid public key")
+		return "", errors.New("invalid public key")
 	}
 	payload := appendBytes(CessPrefix, publicKey)
 	input := appendBytes(SSPrefix, payload)
 	ck := blake2b.Sum512(input)
-	checkum := ck[:2]
-	address := base58.Encode(appendBytes(payload, checkum))
+	checkNum := ck[:2]
+	address := base58.Encode(appendBytes(payload, checkNum))
 	if address == "" {
-		return address, errors.New("Public key encoding failed")
+		return address, errors.New("public key encoding failed")
 	}
 	return address, nil
 }
