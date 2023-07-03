@@ -5,12 +5,19 @@ import (
 	"MatrixAI-Client/chain/pallets"
 	"MatrixAI-Client/chain/subscribe"
 	"MatrixAI-Client/config"
+	client2 "MatrixAI-Client/deep_learning_model/paddlepaddle/client"
 	"MatrixAI-Client/logs"
 	"MatrixAI-Client/machine_info"
 	"MatrixAI-Client/pattern"
+	"MatrixAI-Client/utils"
+	"context"
 	"fmt"
 	"github.com/centrifuge/go-substrate-rpc-client/v4/types/codec"
 	"github.com/urfave/cli"
+	"google.golang.org/grpc"
+	"os"
+	"os/exec"
+	"strconv"
 	"time"
 )
 
@@ -52,6 +59,29 @@ var ClientCommand = cli.Command{
 					logs.Normal("Machine already exists")
 				}
 
+				cmd := exec.Command("cmd", "/C", "start", "python", "server/paddle_server.py")
+				if err := cmd.Start(); err != nil {
+					logs.Error(fmt.Sprintf("Failed to start server: %v", err))
+					return err
+				}
+				defer func(Process *os.Process) {
+					err := Process.Kill()
+					if err != nil {
+
+					}
+				}(cmd.Process)
+
+				conn, err := grpc.Dial("localhost:50051", grpc.WithInsecure())
+				if err != nil {
+					return err
+				}
+				defer func(conn *grpc.ClientConn) {
+					err := conn.Close()
+					if err != nil {
+
+					}
+				}(conn)
+
 				for {
 					subscribeBlocks := subscribe.NewSubscribeWrapper(chainInfo)
 					orderId, orderPlacedMetadata, err := subscribeBlocks.SubscribeEvents(hwInfo)
@@ -66,17 +96,21 @@ var ClientCommand = cli.Command{
 						return nil
 					}
 
-					// ------- Simulate AI model training -------
-					time.Sleep(10 * time.Second)
-					// ------- Simulate AI model training -------
-
-					_, err = matrixWrapper.OrderCompleted(orderId, orderPlacedMetadata)
+					err = trainingModel(conn, &orderPlacedMetadata)
 					if err != nil {
-						logs.Error(err.Error())
-						return err
+						_, err = matrixWrapper.OrderFailed(orderId, orderPlacedMetadata)
+						if err != nil {
+							logs.Error(err.Error())
+							return err
+						}
+						logs.Normal("OrderFailed done")
+					} else {
+						_, err = matrixWrapper.OrderCompleted(orderId, orderPlacedMetadata)
+						if err != nil {
+							return err
+						}
+						logs.Normal("OrderCompleted done")
 					}
-
-					logs.Normal("OrderCompleted done")
 
 					time.Sleep(1 * time.Second)
 				}
@@ -108,6 +142,70 @@ var ClientCommand = cli.Command{
 			},
 		},
 	},
+}
+
+func trainingModel(conn *grpc.ClientConn, orderPlacedMetadata *pattern.OrderPlacedMetadata) error {
+	// ---------- download datasets ----------
+	logs.Normal(fmt.Sprintf("Start downloading DataUrl: %v", orderPlacedMetadata.DataUrl))
+
+	url := utils.EnsureHttps(orderPlacedMetadata.DataUrl)
+	err := utils.DownloadAndRenameFile(url, pattern.DATASETS_FOLDER+"/", pattern.DATASETS_FOLDER+pattern.ZIP_NAME)
+	if err != nil {
+		logs.Error(fmt.Sprintf("Failed to download and rename the file: %v", err))
+		return err
+	}
+	logs.Normal("Download and rename the file successfully")
+
+	_, err = utils.Unzip(pattern.DATASETS_FOLDER+pattern.ZIP_NAME, pattern.DATASETS_FOLDER)
+	if err != nil {
+		logs.Error(fmt.Sprintf("Failed to unzip the file: %v", err))
+		return err
+	}
+
+	err = os.Remove(pattern.DATASETS_FOLDER + pattern.ZIP_NAME)
+	if err != nil {
+		logs.Error(fmt.Sprintf("Failed to delete the zip file: %v", err))
+		return err
+	}
+	logs.Normal("Unzip the file successfully")
+	// ---------- download datasets ----------
+
+	// ------- AI model training -------
+	client := client2.NewTrainServiceClient(conn)
+
+	req := &client2.Empty{}
+	res, err := client.TrainAndPredict(context.Background(), req)
+	if err != nil {
+		return err
+	}
+
+	msg := res.GetMessage()
+
+	logs.Normal(fmt.Sprintf("msg: %v", msg))
+	// ------- AI model training -------
+
+	err = utils.Zip("./server/output/model", "./model.zip")
+	if err != nil {
+		return err
+	}
+
+	orderPlacedMetadata.Evaluate = msg
+
+	// ---------- upload model ----------
+	link, err := utils.UploadModel("./model.zip")
+	if err != nil {
+		logs.Error(fmt.Sprintf("Failed to upload the model: %v", err))
+		return err
+	}
+	orderPlacedMetadata.ModelUrl = link
+	orderPlacedMetadata.CompleteTime = strconv.FormatInt(time.Now().Unix(), 10)
+	err = os.Remove("./model.zip")
+	if err != nil {
+		logs.Error(fmt.Sprintf("Failed to delete the zip file: %v", err))
+		return err
+	}
+	// ---------- upload model ----------
+	return nil
 }
 
 func getMatrix(c *cli.Context) (*pallets.WrapperMatrix, *machine_info.MachineInfo, *chain.InfoChain, error) {

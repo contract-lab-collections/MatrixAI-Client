@@ -2,9 +2,11 @@ package cmd
 
 import (
 	"MatrixAI-Client/logs"
+	"MatrixAI-Client/utils"
 	"fmt"
-	"github.com/cavaliergopher/grab/v3"
 	"github.com/urfave/cli"
+	"log"
+	"os"
 )
 
 var DatasetsCommand = cli.Command{
@@ -26,13 +28,29 @@ var DatasetsCommand = cli.Command{
 				url := c.String("url")
 				logs.Result(fmt.Sprintf("url: %v", url))
 
-				resp, err := grab.Get("./datasets", url)
+				url = utils.EnsureHttps(url)
+
+				err := utils.DownloadAndRenameFile(url, "./datasets/", "./datasets/datasets.zip")
 				if err != nil {
-					fmt.Printf("Error downloading file: %v\n", err)
+					log.Fatalf("Failed to download and rename the file: %v", err)
 					return err
 				}
 
-				logs.Result(fmt.Sprintf("resp name: %v", resp.Filename))
+				logs.Result("Download and rename the file successfully")
+
+				_, err = utils.Unzip("./datasets/datasets.zip", "./datasets")
+				if err != nil {
+					log.Fatalf("Failed to unzip the file: %v", err)
+					return err
+				}
+
+				err = os.Remove("./datasets/datasets.zip")
+				if err != nil {
+					log.Fatalf("Failed to delete the zip file: %v", err)
+				}
+
+				logs.Result("Unzip the file successfully")
+
 				return nil
 			},
 		},

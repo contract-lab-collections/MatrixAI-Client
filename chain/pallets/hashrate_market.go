@@ -12,7 +12,6 @@ import (
 	"github.com/centrifuge/go-substrate-rpc-client/v4/types"
 	"github.com/centrifuge/go-substrate-rpc-client/v4/types/codec"
 	"github.com/pkg/errors"
-	"strconv"
 	"time"
 )
 
@@ -67,7 +66,7 @@ func (chain WrapperMatrix) AddMachine(hardwareInfo machine_info.MachineInfo) (st
 		select {
 		case status := <-sub.Chan():
 			if status.IsInBlock {
-				logs.Result(fmt.Sprintf("------------------ 交易完成 ------------------ : %#x", status.AsInBlock))
+				logs.Result(fmt.Sprintf("------------------ Extrinsic completed ------------------ : %#x", status.AsInBlock))
 
 				tEvents := events.EventRecords{}
 				txhash, _ = codec.EncodeToHex(status.AsInBlock)
@@ -105,11 +104,6 @@ func (chain WrapperMatrix) OrderCompleted(orderId pattern.OrderId, orderPlacedMe
 		accountInfo types.AccountInfo
 	)
 
-	// ---------- 临时测试 ----------
-	orderPlacedMetadata.ModelUrl = "https://cess.com/"
-	orderPlacedMetadata.CompleteTime = strconv.FormatInt(time.Now().Unix(), 10)
-	// ---------- 临时测试 ----------
-
 	jsonData, err := json.Marshal(orderPlacedMetadata)
 	if err != nil {
 		return txhash, fmt.Errorf("error marshaling the struct to JSON: %v", err)
@@ -144,7 +138,7 @@ func (chain WrapperMatrix) OrderCompleted(orderId pattern.OrderId, orderPlacedMe
 		select {
 		case status := <-sub.Chan():
 			if status.IsInBlock {
-				logs.Result(fmt.Sprintf("------------------ 交易完成 ------------------ : %#x", status.AsInBlock))
+				logs.Result(fmt.Sprintf("------------------ Extrinsic completed ------------------ : %#x", status.AsInBlock))
 
 				tEvents := events.EventRecords{}
 				txhash, _ = codec.EncodeToHex(status.AsInBlock)
@@ -161,6 +155,78 @@ func (chain WrapperMatrix) OrderCompleted(orderId pattern.OrderId, orderPlacedMe
 				for _, e := range tEvents.HashrateMarket_OrderCompleted {
 					if codec.Eq(e.OrderId, orderId) {
 						logs.Result("order completed bingo!!!")
+						return txhash, nil
+					}
+				}
+				return txhash, errors.New(pattern.ERR_Failed)
+			}
+		case err = <-sub.Err():
+			return txhash, fmt.Errorf("error submitting extrinsic: %v", err)
+		case <-timeout.C:
+			return txhash, errors.New(pattern.ERR_Timeout)
+		}
+	}
+}
+
+func (chain WrapperMatrix) OrderFailed(orderId pattern.OrderId, orderPlacedMetadata pattern.OrderPlacedMetadata) (string, error) {
+	logs.Normal(fmt.Sprintf("Extrinsic : %v", pattern.TX_HASHRATE_MARKET_ORDER_FAILED))
+
+	var (
+		txhash      string
+		accountInfo types.AccountInfo
+	)
+
+	jsonData, err := json.Marshal(orderPlacedMetadata)
+	if err != nil {
+		return txhash, fmt.Errorf("error marshaling the struct to JSON: %v", err)
+	}
+
+	err = chain.GetNonce(&accountInfo)
+	if err != nil {
+		return txhash, fmt.Errorf("error getting nonce: %v", err)
+	}
+
+	call, err := types.NewCall(chain.Conn.Metadata, pattern.TX_HASHRATE_MARKET_ORDER_FAILED, orderId, types.NewBytes(jsonData))
+	if err != nil {
+		return txhash, fmt.Errorf("error creating call: %v", err)
+	}
+
+	ext, err := chain.GetSign(accountInfo, call)
+	if err != nil {
+		return txhash, fmt.Errorf("error getting sign: %v", err)
+	}
+
+	sub, err := chain.Conn.Api.RPC.Author.SubmitAndWatchExtrinsic(ext)
+	if err != nil {
+		return txhash, fmt.Errorf("error submitting extrinsic: %v", err)
+	}
+
+	defer sub.Unsubscribe()
+
+	timeout := time.NewTimer(time.Second * time.Duration(12))
+	defer timeout.Stop()
+
+	for {
+		select {
+		case status := <-sub.Chan():
+			if status.IsInBlock {
+				logs.Result(fmt.Sprintf("------------------ Extrinsic completed ------------------ : %#x", status.AsInBlock))
+
+				tEvents := events.EventRecords{}
+				txhash, _ = codec.EncodeToHex(status.AsInBlock)
+				h, err := chain.Conn.Api.RPC.State.GetStorageRaw(chain.Conn.KeyEvents, status.AsInBlock)
+				if err != nil {
+					return txhash, fmt.Errorf("error getting storage raw: %v", err)
+				}
+
+				err = types.EventRecordsRaw(*h).DecodeEventRecords(chain.Conn.Metadata, &tEvents)
+				if err != nil {
+					return txhash, fmt.Errorf("DecodeEventRecords error : %v", err)
+				}
+
+				for _, e := range tEvents.HashrateMarket_OrderFailed {
+					if codec.Eq(e.OrderId, orderId) {
+						logs.Result("order failed bingo!!!")
 						return txhash, nil
 					}
 				}
@@ -216,7 +282,7 @@ func (chain WrapperMatrix) RemoveMachine(hardwareInfo machine_info.MachineInfo) 
 		select {
 		case status := <-sub.Chan():
 			if status.IsInBlock {
-				logs.Result(fmt.Sprintf("------------------ 交易完成 ------------------ : %#x", status.AsInBlock))
+				logs.Result(fmt.Sprintf("------------------ Extrinsic completed ------------------ : %#x", status.AsInBlock))
 
 				tEvents := events.EventRecords{}
 				txhash, _ = codec.EncodeToHex(status.AsInBlock)

@@ -22,6 +22,8 @@ type MatrixAiEventRecords struct {
 
 	HashrateMarket_OrderCompleted []Event_OrderCompleted
 
+	HashrateMarket_OrderFailed []Event_OrderFailed
+
 	HashrateMarket_MachineRemoved []Event_MachineRemoved
 }
 
@@ -111,6 +113,14 @@ type Event_OrderPlaced struct {
 }
 
 type Event_OrderCompleted struct {
+	Phase   types.Phase
+	OrderId pattern.OrderId
+	Buyer   types.AccountID
+	Seller  types.AccountID
+	Topics  []types.Hash
+}
+
+type Event_OrderFailed struct {
 	Phase   types.Phase
 	OrderId pattern.OrderId
 	Buyer   types.AccountID

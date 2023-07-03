@@ -17,3 +17,16 @@ message TrainResult {
 service TrainService {
   rpc TrainAndPredict(Empty) returns (TrainResult);
 }
+
+//service PaddleService {
+//  rpc TrainAndEvaluate (TrainAndEvaluateRequest) returns (TrainAndEvaluateReply);
+//}
+//
+//message TrainAndEvaluateRequest {
+//  string mnemonics = 1;
+//  string rpc_node = 2;
+//}
+//
+//message TrainAndEvaluateReply {
+//  bool success = 1;
+//}

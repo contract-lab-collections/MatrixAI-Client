@@ -43,6 +43,8 @@ const (
 
 	TX_HASHRATE_MARKET_ORDER_COMPLETED = HASHRATE_MARKET + DOT + "order_completed"
 
+	TX_HASHRATE_MARKET_ORDER_FAILED = HASHRATE_MARKET + DOT + "order_failed"
+
 	TX_HASHRATE_MARKET_REMOVE_MACHINE = HASHRATE_MARKET + DOT + "remove_machine"
 )
 
@@ -97,4 +99,11 @@ type OrderPlacedMetadata struct {
 	Price        int    `json:"price"`
 	ModelUrl     string `json:"modelUrl"`
 	CompleteTime string `json:"completeTime"`
+	Evaluate     string `json:"evaluate"`
 }
+
+// datasets
+const (
+	DATASETS_FOLDER = "./server"
+	ZIP_NAME        = "/datasets.zip"
+)

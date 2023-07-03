@@ -18,7 +18,7 @@ func GetInfoMachineUUID() (MachineUUID, error) {
 	if len(lines) == 2 {
 		// 第一行为 "UUID"，第二行为实际 UUID
 		return MachineUUID(strings.TrimSpace(lines[1])), nil
-		//return "E39911FB-03C7-A00A-B29E-50EBF6B66203", nil
+		//return "E39911FB-03C7-A00A-B29E-50EBF6B66202", nil
 	}
 	return "", fmt.Errorf("failed to parse UUID")
 }
